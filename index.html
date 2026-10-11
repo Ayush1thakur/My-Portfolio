@@ -1012,6 +1012,253 @@
       background: var(--orange-vibrant);
     }
 
+    /* Admin Portal & Modal Styles */
+    .admin-portal-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: var(--orange-light);
+      color: var(--orange-primary);
+      border: 1px solid var(--orange-border);
+      padding: 0.42rem 0.95rem;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .admin-portal-btn:hover {
+      background: var(--orange-vibrant);
+      color: #ffffff;
+      border-color: var(--orange-vibrant);
+      transform: translateY(-1px);
+    }
+
+    .admin-toast-banner {
+      position: fixed;
+      top: 1.25rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #18181b;
+      color: #fafafa;
+      border: 1px solid var(--orange-vibrant);
+      padding: 0.75rem 1.75rem;
+      border-radius: var(--radius-full);
+      font-size: 0.925rem;
+      font-weight: 700;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+      z-index: 2000;
+      display: none;
+    }
+
+    .admin-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+      z-index: 1500;
+    }
+
+    .admin-modal-card {
+      background: var(--surface);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      width: 100%;
+      max-width: 860px;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+    }
+
+    .admin-modal-header {
+      padding: 1.35rem 1.75rem;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--surface-elevated);
+    }
+
+    .admin-header-title {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .admin-header-title h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin: 0;
+      color: var(--text-main);
+    }
+
+    .admin-badge {
+      background: var(--orange-light);
+      color: var(--orange-primary);
+      border: 1px solid var(--orange-border);
+      font-size: 0.72rem;
+      font-weight: 800;
+      font-family: ui-monospace, Menlo, monospace;
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      letter-spacing: 0.05em;
+    }
+
+    .close-modal-btn {
+      background: transparent;
+      border: none;
+      font-size: 1.35rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 0.35rem 0.65rem;
+      border-radius: 8px;
+    }
+
+    .close-modal-btn:hover {
+      background: var(--border-color);
+      color: var(--text-main);
+    }
+
+    .admin-body {
+      padding: 1.75rem;
+      overflow-y: auto;
+    }
+
+    .login-error-alert {
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.35);
+      color: #dc2626;
+      padding: 0.85rem 1.15rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      display: none;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-main);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .sub-form-row input {
+      background: var(--bg-base);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .sub-form-row input:focus {
+      border-color: var(--orange-vibrant);
+      box-shadow: 0 0 0 3px var(--orange-light);
+    }
+
+    .admin-tabs {
+      display: flex;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      overflow-x: auto;
+    }
+
+    .tab-btn {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 0.55rem 1.1rem;
+      border-radius: 10px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .tab-btn.active {
+      background: var(--orange-vibrant);
+      color: #ffffff;
+      border-color: var(--orange-vibrant);
+    }
+
+    .tab-btn.logout-tab {
+      margin-left: auto;
+      background: transparent;
+      color: #ef4444;
+      border-color: rgba(239, 68, 68, 0.3);
+    }
+
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.15rem;
+    }
+
+    @media (min-width: 640px) {
+      .form-grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .admin-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .admin-list-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-color);
+      padding: 0.85rem 1.15rem;
+      border-radius: 12px;
+    }
+
+    .btn-delete {
+      background: rgba(239, 68, 68, 0.1);
+      color: #ef4444;
+      border: 1px solid rgba(239, 68, 68, 0.25);
+      padding: 0.4rem 0.8rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .btn-delete:hover {
+      background: #ef4444;
+      color: #ffffff;
+    }
+
     /* Print Stylesheet */
     @media print {
       body {
@@ -1054,6 +1301,10 @@
       </div>
 
       <div class="top-actions">
+        <a href="admin.html" class="admin-portal-btn" title="Admin Control Center (Dedicated Page)">
+          🔐 <span>Admin Portal</span>
+        </a>
+
         <button id="theme-toggle" class="icon-btn" aria-label="Toggle dark/light theme" title="Toggle theme">
           <svg id="theme-icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
           <svg id="theme-icon-moon" style="display:none;" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
@@ -1462,6 +1713,8 @@
       if (yr) yr.textContent = new Date().getFullYear();
 
       // 3. Live Sync with /api/portfolio
+      let livePortfolioData = null;
+
       async function syncPortfolioData() {
         const apiDot = document.getElementById('api-dot');
         const apiStatus = document.getElementById('api-status-text');
@@ -1471,6 +1724,7 @@
           if (res.ok) {
             const json = await res.json();
             if (json && json.data) {
+              livePortfolioData = json.data;
               const d = json.data;
               if (d.personalInfo) {
                 if (d.personalInfo.fullName) document.getElementById('hero-name').textContent = d.personalInfo.fullName;
@@ -1478,8 +1732,19 @@
                 if (d.personalInfo.currentCompany) document.getElementById('hero-company').textContent = d.personalInfo.currentCompany;
                 if (d.personalInfo.college) document.getElementById('hero-college').textContent = d.personalInfo.college;
                 if (d.personalInfo.summary) document.getElementById('hero-bio').textContent = d.personalInfo.summary;
+
+                // Sync form inputs
+                if (document.getElementById('prof-name')) document.getElementById('prof-name').value = d.personalInfo.fullName || '';
+                if (document.getElementById('prof-title')) document.getElementById('prof-title').value = d.personalInfo.title || '';
+                if (document.getElementById('prof-company')) document.getElementById('prof-company').value = d.personalInfo.currentCompany || '';
+                if (document.getElementById('prof-college')) document.getElementById('prof-college').value = d.personalInfo.college || '';
+                if (document.getElementById('prof-phone')) document.getElementById('prof-phone').value = d.personalInfo.phone || '';
+                if (document.getElementById('prof-email')) document.getElementById('prof-email').value = d.personalInfo.email || '';
+                if (document.getElementById('prof-location')) document.getElementById('prof-location').value = d.personalInfo.location || '';
+                if (document.getElementById('prof-resume')) document.getElementById('prof-resume').value = d.personalInfo.resumeUrl || '';
+                if (document.getElementById('prof-summary')) document.getElementById('prof-summary').value = d.personalInfo.summary || '';
               }
-              apiStatus.textContent = 'REST API: /api/portfolio (Live)';
+              if (apiStatus) apiStatus.textContent = 'REST API: /api/portfolio (Live & RBAC Active)';
               return;
             }
           }

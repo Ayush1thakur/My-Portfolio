@@ -1012,6 +1012,253 @@
       background: var(--orange-vibrant);
     }
 
+    /* Admin Portal & Modal Styles */
+    .admin-portal-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: var(--orange-light);
+      color: var(--orange-primary);
+      border: 1px solid var(--orange-border);
+      padding: 0.42rem 0.95rem;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .admin-portal-btn:hover {
+      background: var(--orange-vibrant);
+      color: #ffffff;
+      border-color: var(--orange-vibrant);
+      transform: translateY(-1px);
+    }
+
+    .admin-toast-banner {
+      position: fixed;
+      top: 1.25rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #18181b;
+      color: #fafafa;
+      border: 1px solid var(--orange-vibrant);
+      padding: 0.75rem 1.75rem;
+      border-radius: var(--radius-full);
+      font-size: 0.925rem;
+      font-weight: 700;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+      z-index: 2000;
+      display: none;
+    }
+
+    .admin-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+      z-index: 1500;
+    }
+
+    .admin-modal-card {
+      background: var(--surface);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      width: 100%;
+      max-width: 860px;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+    }
+
+    .admin-modal-header {
+      padding: 1.35rem 1.75rem;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--surface-elevated);
+    }
+
+    .admin-header-title {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .admin-header-title h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin: 0;
+      color: var(--text-main);
+    }
+
+    .admin-badge {
+      background: var(--orange-light);
+      color: var(--orange-primary);
+      border: 1px solid var(--orange-border);
+      font-size: 0.72rem;
+      font-weight: 800;
+      font-family: ui-monospace, Menlo, monospace;
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      letter-spacing: 0.05em;
+    }
+
+    .close-modal-btn {
+      background: transparent;
+      border: none;
+      font-size: 1.35rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 0.35rem 0.65rem;
+      border-radius: 8px;
+    }
+
+    .close-modal-btn:hover {
+      background: var(--border-color);
+      color: var(--text-main);
+    }
+
+    .admin-body {
+      padding: 1.75rem;
+      overflow-y: auto;
+    }
+
+    .login-error-alert {
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.35);
+      color: #dc2626;
+      padding: 0.85rem 1.15rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      display: none;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-main);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .sub-form-row input {
+      background: var(--bg-base);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .sub-form-row input:focus {
+      border-color: var(--orange-vibrant);
+      box-shadow: 0 0 0 3px var(--orange-light);
+    }
+
+    .admin-tabs {
+      display: flex;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      overflow-x: auto;
+    }
+
+    .tab-btn {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 0.55rem 1.1rem;
+      border-radius: 10px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .tab-btn.active {
+      background: var(--orange-vibrant);
+      color: #ffffff;
+      border-color: var(--orange-vibrant);
+    }
+
+    .tab-btn.logout-tab {
+      margin-left: auto;
+      background: transparent;
+      color: #ef4444;
+      border-color: rgba(239, 68, 68, 0.3);
+    }
+
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.15rem;
+    }
+
+    @media (min-width: 640px) {
+      .form-grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .admin-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .admin-list-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-color);
+      padding: 0.85rem 1.15rem;
+      border-radius: 12px;
+    }
+
+    .btn-delete {
+      background: rgba(239, 68, 68, 0.1);
+      color: #ef4444;
+      border: 1px solid rgba(239, 68, 68, 0.25);
+      padding: 0.4rem 0.8rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .btn-delete:hover {
+      background: #ef4444;
+      color: #ffffff;
+    }
+
     /* Print Stylesheet */
     @media print {
       body {
@@ -1054,6 +1301,10 @@
       </div>
 
       <div class="top-actions">
+        <button id="admin-portal-btn" class="admin-portal-btn" title="Admin Portal (Login / Manage)">
+          🔐 <span id="admin-btn-label">Admin Login</span>
+        </button>
+
         <button id="theme-toggle" class="icon-btn" aria-label="Toggle dark/light theme" title="Toggle theme">
           <svg id="theme-icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
           <svg id="theme-icon-moon" style="display:none;" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
@@ -1065,6 +1316,171 @@
       </div>
     </div>
   </nav>
+
+  <div id="admin-toast-banner" class="admin-toast-banner">✓ Profile updated successfully</div>
+
+  <!-- ADMIN PORTAL MODAL -->
+  <div id="admin-modal-backdrop" class="admin-modal-backdrop" style="display:none;">
+    <div class="admin-modal-card">
+      <div class="admin-modal-header">
+        <div class="admin-header-title">
+          <span class="admin-badge">ROLE_ADMIN</span>
+          <h3 id="admin-modal-title">Administrator Authentication</h3>
+        </div>
+        <button id="admin-modal-close" class="close-modal-btn" title="Close">✕</button>
+      </div>
+
+      <!-- Login View -->
+      <div id="admin-login-view" class="admin-body">
+        <p style="color:var(--text-muted); margin-bottom:1.25rem;">
+          Sign in with administrator credentials to manage projects, update phone number, or change resume URL.
+        </p>
+        <div id="admin-login-error" class="login-error-alert"></div>
+        <form id="admin-login-form">
+          <div class="form-group">
+            <label>Username ID</label>
+            <input type="text" id="admin-input-user" required placeholder="Ayush" value="Ayush">
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="admin-input-pass" required placeholder="Ayush.admin" value="Ayush.admin">
+          </div>
+          <button type="submit" class="btn-orange" style="width:100%; justify-content:center; padding:0.85rem; margin-top:0.5rem;">
+            Authenticate &amp; Open Dashboard →
+          </button>
+        </form>
+        <div style="margin-top:1.25rem; font-size:0.85rem; color:var(--text-muted); text-align:center;">
+          Required ID: <strong>Ayush</strong> | Password: <strong>Ayush.admin</strong>
+        </div>
+      </div>
+
+      <!-- Dashboard View (When Logged In) -->
+      <div id="admin-dashboard-view" class="admin-body" style="display:none;">
+        <div class="admin-tabs">
+          <button class="tab-btn active" data-tab="tab-profile">👤 Profile &amp; Contact</button>
+          <button class="tab-btn" data-tab="tab-projects">🚀 Personal Projects</button>
+          <button class="tab-btn" data-tab="tab-company">🏢 Company Projects</button>
+          <button class="tab-btn" data-tab="tab-certs">🏆 Certifications</button>
+          <button id="admin-logout-btn" class="tab-btn logout-tab">🚪 Logout</button>
+        </div>
+
+        <!-- Tab 1: Profile & Contact -->
+        <div id="tab-profile" class="tab-pane">
+          <form id="admin-profile-form">
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="prof-name" value="Ayush Thakur">
+              </div>
+              <div class="form-group">
+                <label>Professional Title</label>
+                <input type="text" id="prof-title" value="Associate Software Engineer">
+              </div>
+              <div class="form-group">
+                <label>Current Company</label>
+                <input type="text" id="prof-company" value="MAQ Software">
+              </div>
+              <div class="form-group">
+                <label>College / Alma Mater</label>
+                <input type="text" id="prof-college" value="Chitkara University">
+              </div>
+              <div class="form-group">
+                <label>Phone Number (Directly Editable)</label>
+                <input type="text" id="prof-phone" value="+91-9877247382">
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" id="prof-email" value="ayush.thaku7@gmail.com">
+              </div>
+              <div class="form-group">
+                <label>Location</label>
+                <input type="text" id="prof-location" value="Noida, India">
+              </div>
+              <div class="form-group">
+                <label>Resume Link / File URL (Directly Editable)</label>
+                <input type="text" id="prof-resume" value="https://drive.google.com/file/d/ayush-resume/view">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Bio Summary</label>
+              <textarea id="prof-summary" rows="3">Associate Software Engineer at MAQ Software specializing in high-throughput enterprise pipelines and cloud systems.</textarea>
+            </div>
+            <button type="submit" class="btn-orange" style="margin-top:0.5rem;">
+              💾 Save Profile Changes to Database
+            </button>
+          </form>
+        </div>
+
+        <!-- Tab 2: Personal Projects -->
+        <div id="tab-projects" class="tab-pane" style="display:none;">
+          <h4 style="margin-bottom:1rem; color:var(--text-main);">Add New Personal Project</h4>
+          <form id="admin-project-form" style="background:var(--surface-elevated); padding:1.25rem; border:1px solid var(--border-color); border-radius:12px; margin-bottom:1.5rem;">
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label>Project Title</label>
+                <input type="text" id="proj-title" required placeholder="e.g. Distributed Task Scheduler">
+              </div>
+              <div class="form-group">
+                <label>Technologies</label>
+                <input type="text" id="proj-tech" required placeholder="e.g. Java, Spring Boot, Redis">
+              </div>
+              <div class="form-group">
+                <label>GitHub URL</label>
+                <input type="text" id="proj-github" placeholder="https://github.com/...">
+              </div>
+              <div class="form-group">
+                <label>Category</label>
+                <input type="text" id="proj-category" placeholder="Backend Systems">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Description</label>
+              <input type="text" id="proj-desc" required placeholder="High-throughput distributed engine...">
+            </div>
+            <div class="form-group">
+              <label>Bullets (one per line)</label>
+              <textarea id="proj-bullets" rows="2" placeholder="Leader election via Redis&#10;Zero downtime"></textarea>
+            </div>
+            <button type="submit" class="btn-orange">+ Add Personal Project</button>
+          </form>
+          <div id="admin-projects-list" class="admin-list"></div>
+        </div>
+
+        <!-- Tab 3: Company Projects -->
+        <div id="tab-company" class="tab-pane" style="display:none;">
+          <h4 style="margin-bottom:1rem; color:var(--text-main);">Add Company Project (under MAQ Software)</h4>
+          <form id="admin-company-form" style="background:var(--surface-elevated); padding:1.25rem; border:1px solid var(--border-color); border-radius:12px; margin-bottom:1.5rem;">
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label>Project Name</label>
+                <input type="text" id="comp-name" required placeholder="e.g. Real-Time Telemetry Pipeline">
+              </div>
+              <div class="form-group">
+                <label>Technologies</label>
+                <input type="text" id="comp-tech" required placeholder="e.g. Python, Azure Event Hubs, SQL">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Impact Bullets (one per line)</label>
+              <textarea id="comp-bullets" rows="2" placeholder="Processed 5M records daily"></textarea>
+            </div>
+            <button type="submit" class="btn-orange">+ Add Company Project</button>
+          </form>
+          <div id="admin-company-list" class="admin-list"></div>
+        </div>
+
+        <!-- Tab 4: Certifications -->
+        <div id="tab-certs" class="tab-pane" style="display:none;">
+          <h4 style="margin-bottom:1rem; color:var(--text-main);">Manage Certifications</h4>
+          <form id="admin-cert-form" style="display:flex; gap:0.75rem; margin-bottom:1.5rem;">
+            <input type="text" id="cert-input" required placeholder="e.g. AWS Certified Solutions Architect" style="flex:1;">
+            <button type="submit" class="btn-orange">+ Add</button>
+          </form>
+          <div id="admin-certs-list" class="admin-list"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <main class="container">
 
@@ -1462,6 +1878,8 @@
       if (yr) yr.textContent = new Date().getFullYear();
 
       // 3. Live Sync with /api/portfolio
+      let livePortfolioData = null;
+
       async function syncPortfolioData() {
         const apiDot = document.getElementById('api-dot');
         const apiStatus = document.getElementById('api-status-text');
@@ -1471,6 +1889,7 @@
           if (res.ok) {
             const json = await res.json();
             if (json && json.data) {
+              livePortfolioData = json.data;
               const d = json.data;
               if (d.personalInfo) {
                 if (d.personalInfo.fullName) document.getElementById('hero-name').textContent = d.personalInfo.fullName;
@@ -1478,8 +1897,20 @@
                 if (d.personalInfo.currentCompany) document.getElementById('hero-company').textContent = d.personalInfo.currentCompany;
                 if (d.personalInfo.college) document.getElementById('hero-college').textContent = d.personalInfo.college;
                 if (d.personalInfo.summary) document.getElementById('hero-bio').textContent = d.personalInfo.summary;
+
+                // Sync form inputs
+                if (document.getElementById('prof-name')) document.getElementById('prof-name').value = d.personalInfo.fullName || '';
+                if (document.getElementById('prof-title')) document.getElementById('prof-title').value = d.personalInfo.title || '';
+                if (document.getElementById('prof-company')) document.getElementById('prof-company').value = d.personalInfo.currentCompany || '';
+                if (document.getElementById('prof-college')) document.getElementById('prof-college').value = d.personalInfo.college || '';
+                if (document.getElementById('prof-phone')) document.getElementById('prof-phone').value = d.personalInfo.phone || '';
+                if (document.getElementById('prof-email')) document.getElementById('prof-email').value = d.personalInfo.email || '';
+                if (document.getElementById('prof-location')) document.getElementById('prof-location').value = d.personalInfo.location || '';
+                if (document.getElementById('prof-resume')) document.getElementById('prof-resume').value = d.personalInfo.resumeUrl || '';
+                if (document.getElementById('prof-summary')) document.getElementById('prof-summary').value = d.personalInfo.summary || '';
               }
-              apiStatus.textContent = 'REST API: /api/portfolio (Live)';
+              renderAdminLists();
+              if (apiStatus) apiStatus.textContent = 'REST API: /api/portfolio (Live & RBAC Active)';
               return;
             }
           }
@@ -1490,6 +1921,347 @@
         if (apiStatus) apiStatus.textContent = 'Design: White & Orange (Ready)';
       }
 
+      function showToast(msg) {
+        const toast = document.getElementById('admin-toast-banner');
+        if (!toast) return;
+        toast.textContent = '✓ ' + msg;
+        toast.style.display = 'block';
+        setTimeout(() => { toast.style.display = 'none'; }, 2800);
+      }
+
+      // 4. Admin Authentication & CRUD Controller
+      const ADMIN_TOKEN_KEY = 'portfolio_admin_token';
+      const portalBtn = document.getElementById('admin-portal-btn');
+      const btnLabel = document.getElementById('admin-btn-label');
+      const backdrop = document.getElementById('admin-modal-backdrop');
+      const closeBtn = document.getElementById('admin-modal-close');
+      const modalTitle = document.getElementById('admin-modal-title');
+      const loginView = document.getElementById('admin-login-view');
+      const dashboardView = document.getElementById('admin-dashboard-view');
+      const loginForm = document.getElementById('admin-login-form');
+      const loginError = document.getElementById('admin-login-error');
+      const logoutBtn = document.getElementById('admin-logout-btn');
+
+      function getAdminToken() {
+        return localStorage.getItem(ADMIN_TOKEN_KEY);
+      }
+
+      function updateAdminUI() {
+        const token = getAdminToken();
+        if (token) {
+          btnLabel.textContent = 'Admin Dashboard';
+          modalTitle.textContent = 'Admin Control Dashboard';
+          loginView.style.display = 'none';
+          dashboardView.style.display = 'block';
+        } else {
+          btnLabel.textContent = 'Admin Login';
+          modalTitle.textContent = 'Administrator Authentication';
+          loginView.style.display = 'block';
+          dashboardView.style.display = 'none';
+        }
+      }
+
+      if (portalBtn) {
+        portalBtn.addEventListener('click', () => {
+          updateAdminUI();
+          backdrop.style.display = 'flex';
+        });
+      }
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+          backdrop.style.display = 'none';
+        });
+      }
+
+      backdrop.addEventListener('click', (e) => {
+        if (e.target === backdrop) backdrop.style.display = 'none';
+      });
+
+      // Login submission
+      if (loginForm) {
+        loginForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          loginError.style.display = 'none';
+          const username = document.getElementById('admin-input-user').value.trim();
+          const password = document.getElementById('admin-input-pass').value.trim();
+
+          try {
+            const res = await fetch('http://localhost:8081/api/auth/login', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ username, password })
+            });
+
+            const data = await res.json();
+            if (res.ok && data.success && data.data && data.data.token) {
+              localStorage.setItem(ADMIN_TOKEN_KEY, data.data.token);
+              updateAdminUI();
+              showToast('Authenticated as ' + data.data.username + ' (' + data.data.role + ')');
+              return;
+            } else {
+              loginError.textContent = data.message || 'Invalid credentials. Required: Ayush / Ayush.admin';
+              loginError.style.display = 'block';
+            }
+          } catch (err) {
+            // If offline, check exact requested credentials locally
+            if (username === 'Ayush' && password === 'Ayush.admin') {
+              localStorage.setItem(ADMIN_TOKEN_KEY, 'mock-admin-token-' + Date.now());
+              updateAdminUI();
+              showToast('Authenticated as Ayush (ROLE_ADMIN)');
+            } else {
+              loginError.textContent = 'Invalid credentials. Only user Ayush has access.';
+              loginError.style.display = 'block';
+            }
+          }
+        });
+      }
+
+      if (logoutBtn) {
+        logoutBtn.addEventListener('click', () => {
+          const token = getAdminToken();
+          if (token) {
+            fetch('http://localhost:8081/api/auth/logout', {
+              method: 'POST',
+              headers: { Authorization: 'Bearer ' + token }
+            }).catch(() => {});
+          }
+          localStorage.removeItem(ADMIN_TOKEN_KEY);
+          updateAdminUI();
+          showToast('Logged out successfully');
+        });
+      }
+
+      // Tab Switching
+      document.querySelectorAll('.tab-btn[data-tab]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.tab-btn[data-tab]').forEach(b => b.classList.remove('active'));
+          document.querySelectorAll('.tab-pane').forEach(p => p.style.display = 'none');
+          btn.classList.add('active');
+          const target = document.getElementById(btn.getAttribute('data-tab'));
+          if (target) target.style.display = 'block';
+        });
+      });
+
+      // Save Profile & Contact Info (Changing num, updating resume)
+      const profileForm = document.getElementById('admin-profile-form');
+      if (profileForm) {
+        profileForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const token = getAdminToken();
+          const payload = {
+            fullName: document.getElementById('prof-name').value.trim(),
+            title: document.getElementById('prof-title').value.trim(),
+            currentCompany: document.getElementById('prof-company').value.trim(),
+            college: document.getElementById('prof-college').value.trim(),
+            phone: document.getElementById('prof-phone').value.trim(),
+            email: document.getElementById('prof-email').value.trim(),
+            location: document.getElementById('prof-location').value.trim(),
+            resumeUrl: document.getElementById('prof-resume').value.trim(),
+            summary: document.getElementById('prof-summary').value.trim()
+          };
+
+          try {
+            const res = await fetch('http://localhost:8081/api/admin/profile', {
+              method: 'PUT',
+              headers: {
+                'Content-Type': 'application/json',
+                Authorization: 'Bearer ' + token
+              },
+              body: JSON.stringify(payload)
+            });
+            if (res.ok) {
+              showToast('Profile & Contact details updated in database!');
+              syncPortfolioData();
+              return;
+            }
+          } catch (err) {}
+
+          // Fallback update on page
+          document.getElementById('hero-name').textContent = payload.fullName;
+          document.getElementById('hero-title').textContent = payload.title;
+          document.getElementById('hero-company').textContent = payload.currentCompany;
+          document.getElementById('hero-college').textContent = payload.college;
+          document.getElementById('hero-bio').textContent = payload.summary;
+          showToast('Profile updated locally!');
+        });
+      }
+
+      // Add Project
+      const projectForm = document.getElementById('admin-project-form');
+      if (projectForm) {
+        projectForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const token = getAdminToken();
+          const bullets = document.getElementById('proj-bullets').value.split('\n').map(s => s.trim()).filter(Boolean);
+          const payload = {
+            title: document.getElementById('proj-title').value.trim(),
+            technologies: document.getElementById('proj-tech').value.trim(),
+            githubUrl: document.getElementById('proj-github').value.trim(),
+            category: document.getElementById('proj-category').value.trim() || 'Backend Systems',
+            description: document.getElementById('proj-desc').value.trim(),
+            bullets: bullets
+          };
+
+          try {
+            const res = await fetch('http://localhost:8081/api/admin/projects', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                Authorization: 'Bearer ' + token
+              },
+              body: JSON.stringify(payload)
+            });
+            if (res.ok) {
+              showToast('Project added successfully!');
+              projectForm.reset();
+              syncPortfolioData();
+            }
+          } catch (err) {}
+        });
+      }
+
+      // Add Company Project
+      const compForm = document.getElementById('admin-company-form');
+      if (compForm) {
+        compForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const token = getAdminToken();
+          const bullets = document.getElementById('comp-bullets').value.split('\n').map(s => s.trim()).filter(Boolean);
+          const payload = {
+            name: document.getElementById('comp-name').value.trim(),
+            technologies: document.getElementById('comp-tech').value.trim(),
+            bullets: bullets
+          };
+
+          try {
+            const res = await fetch('http://localhost:8081/api/admin/subprojects', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                Authorization: 'Bearer ' + token
+              },
+              body: JSON.stringify(payload)
+            });
+            if (res.ok) {
+              showToast('Company project added successfully!');
+              compForm.reset();
+              syncPortfolioData();
+            }
+          } catch (err) {}
+        });
+      }
+
+      // Render Admin Lists
+      function renderAdminLists() {
+        if (!livePortfolioData) return;
+
+        // Projects
+        const pList = document.getElementById('admin-projects-list');
+        if (pList && livePortfolioData.projects) {
+          pList.innerHTML = livePortfolioData.projects.map(p => `
+            <div class="admin-list-item">
+              <div>
+                <strong>${p.title}</strong>
+                <div style="font-size:0.82rem; color:var(--text-muted);">${p.technologies}</div>
+              </div>
+              <button onclick="window.adminDeleteProject(${p.id})" class="btn-delete">🗑️ Delete</button>
+            </div>
+          `).join('');
+        }
+
+        // Company Projects
+        const cList = document.getElementById('admin-company-list');
+        if (cList && livePortfolioData.experience && livePortfolioData.experience.subProjects) {
+          cList.innerHTML = livePortfolioData.experience.subProjects.map(sp => `
+            <div class="admin-list-item">
+              <div>
+                <strong>${sp.name}</strong>
+                <div style="font-size:0.82rem; color:var(--text-muted);">${sp.technologies}</div>
+              </div>
+              ${sp.id ? `<button onclick="window.adminDeleteSubProject(${sp.id})" class="btn-delete">🗑️ Delete</button>` : ''}
+            </div>
+          `).join('');
+        }
+
+        // Certifications
+        const certList = document.getElementById('admin-certs-list');
+        if (certList && livePortfolioData.certifications) {
+          certList.innerHTML = livePortfolioData.certifications.map((c, idx) => `
+            <div class="admin-list-item">
+              <span>★ ${c}</span>
+              <button onclick="window.adminDeleteCert(${idx})" class="btn-delete">✕ Remove</button>
+            </div>
+          `).join('');
+        }
+      }
+
+      window.adminDeleteProject = async (id) => {
+        const token = getAdminToken();
+        if (!token) return;
+        if (confirm('Delete this project?')) {
+          await fetch('http://localhost:8081/api/admin/projects/' + id, {
+            method: 'DELETE',
+            headers: { Authorization: 'Bearer ' + token }
+          });
+          showToast('Project deleted');
+          syncPortfolioData();
+        }
+      };
+
+      window.adminDeleteSubProject = async (id) => {
+        const token = getAdminToken();
+        if (!token) return;
+        if (confirm('Delete this company project?')) {
+          await fetch('http://localhost:8081/api/admin/subprojects/' + id, {
+            method: 'DELETE',
+            headers: { Authorization: 'Bearer ' + token }
+          });
+          showToast('Company project deleted');
+          syncPortfolioData();
+        }
+      };
+
+      window.adminDeleteCert = async (idx) => {
+        const token = getAdminToken();
+        if (!token || !livePortfolioData || !livePortfolioData.certifications) return;
+        const updated = livePortfolioData.certifications.filter((_, i) => i !== idx);
+        await fetch('http://localhost:8081/api/admin/certifications', {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer ' + token
+          },
+          body: JSON.stringify(updated)
+        });
+        showToast('Certification removed');
+        syncPortfolioData();
+      };
+
+      // Add Certification
+      const certForm = document.getElementById('admin-cert-form');
+      if (certForm) {
+        certForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const token = getAdminToken();
+          const val = document.getElementById('cert-input').value.trim();
+          if (!val) return;
+          const current = (livePortfolioData && livePortfolioData.certifications) ? [...livePortfolioData.certifications, val] : [val];
+          await fetch('http://localhost:8081/api/admin/certifications', {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization: 'Bearer ' + token
+            },
+            body: JSON.stringify(current)
+          });
+          document.getElementById('cert-input').value = '';
+          showToast('Certification added');
+          syncPortfolioData();
+        });
+      }
+
+      updateAdminUI();
       syncPortfolioData();
     })();
   </script>

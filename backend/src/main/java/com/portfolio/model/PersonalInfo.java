@@ -26,6 +26,7 @@ public class PersonalInfo {
     private String linkedInUrl;
     private String githubUrl;
     private String avatarUrl;
+    private String resumeUrl;
 
     @Column(length = 2000)
     private String summary;
@@ -37,7 +38,7 @@ public class PersonalInfo {
 
     public PersonalInfo(String fullName, String title, String currentCompany, String college,
                         String location, String statusBadge, String email, String phone,
-                        String linkedInUrl, String githubUrl, String avatarUrl, String summary) {
+                        String linkedInUrl, String githubUrl, String avatarUrl, String resumeUrl, String summary) {
         this.fullName = fullName;
         this.title = title;
         this.currentCompany = currentCompany;
@@ -49,6 +50,7 @@ public class PersonalInfo {
         this.linkedInUrl = linkedInUrl;
         this.githubUrl = githubUrl;
         this.avatarUrl = avatarUrl;
+        this.resumeUrl = resumeUrl;
         this.summary = summary;
         this.updatedAt = LocalDateTime.now();
     }
@@ -147,6 +149,14 @@ public class PersonalInfo {
 
     public void setAvatarUrl(String avatarUrl) {
         this.avatarUrl = avatarUrl;
+    }
+
+    public String getResumeUrl() {
+        return resumeUrl;
+    }
+
+    public void setResumeUrl(String resumeUrl) {
+        this.resumeUrl = resumeUrl;
     }
 
     public String getSummary() {

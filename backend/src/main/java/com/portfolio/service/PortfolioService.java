@@ -6,8 +6,11 @@ import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 @Service
 public class PortfolioService {
@@ -15,19 +18,28 @@ public class PortfolioService {
     private final PersonalInfoRepository personalInfoRepository;
     private final ImpactMetricRepository impactMetricRepository;
     private final ExperienceRepository experienceRepository;
+    private final SubProjectRepository subProjectRepository;
     private final ProjectRepository projectRepository;
     private final EducationRepository educationRepository;
     private final SkillCategoryRepository skillCategoryRepository;
 
+    private final List<String> currentCertifications = new CopyOnWriteArrayList<>(Arrays.asList(
+            "Microsoft Certified: Azure Fundamentals (AZ-900) & Cloud Infrastructure",
+            "Generative AI & Agent Engineering: LangChain, LangGraph & FastMCP",
+            "Enterprise Java Spring Boot, Microservices & Spring Data JPA"
+    ));
+
     public PortfolioService(PersonalInfoRepository personalInfoRepository,
                             ImpactMetricRepository impactMetricRepository,
                             ExperienceRepository experienceRepository,
+                            SubProjectRepository subProjectRepository,
                             ProjectRepository projectRepository,
                             EducationRepository educationRepository,
                             SkillCategoryRepository skillCategoryRepository) {
         this.personalInfoRepository = personalInfoRepository;
         this.impactMetricRepository = impactMetricRepository;
         this.experienceRepository = experienceRepository;
+        this.subProjectRepository = subProjectRepository;
         this.projectRepository = projectRepository;
         this.educationRepository = educationRepository;
         this.skillCategoryRepository = skillCategoryRepository;
@@ -50,7 +62,8 @@ public class PortfolioService {
                     "https://linkedin.com/in/ayush-thakur1",
                     "https://github.com/Ayush1thakur",
                     "./profile.jpg",
-                    "Associate Software Engineer at MAQ Software specializing in distributed data pipelines, enterprise migration platforms, and AI agent architectures. Passionate about building fault-tolerant microservices, high-throughput ETL workflows handling 10M+ records, and resilient cloud systems."
+                    "#", // Default resume link
+                    "Associate Software Engineer at MAQ Software specializing in distributed data pipelines, enterprise migration platforms, and scalable backend architectures. Experienced in processing 10M+ records with fault-tolerant retry workflows, automating Tableau-to-Power BI conversions for 1,000+ reports, and engineering robust APIs using Python, C#, Java Spring Boot, and AI agent frameworks."
             ));
         }
 
@@ -172,11 +185,14 @@ public class PortfolioService {
     }
 
     public List<String> getCertifications() {
-        return Arrays.asList(
-                "Microsoft Certified: Azure Fundamentals (AZ-900) & Cloud Infrastructure",
-                "Generative AI & Agent Engineering: LangChain, LangGraph & FastMCP",
-                "Enterprise Java Spring Boot, Microservices & Spring Data JPA"
-        );
+        return new ArrayList<>(currentCertifications);
+    }
+
+    public void updateCertifications(List<String> newCerts) {
+        if (newCerts != null) {
+            currentCertifications.clear();
+            currentCertifications.addAll(newCerts);
+        }
     }
 
     @Transactional(readOnly = true)
@@ -190,5 +206,75 @@ public class PortfolioService {
         List<String> certifications = getCertifications();
 
         return new PortfolioDataDTO(info, metrics, experiences, projects, education, skills, certifications);
+    }
+
+    // CRUD: Profile
+    @Transactional
+    public PersonalInfo updatePersonalInfo(PersonalInfo updated) {
+        PersonalInfo existing = personalInfoRepository.findFirstByOrderByIdAsc().orElseGet(PersonalInfo::new);
+        if (updated.getFullName() != null) existing.setFullName(updated.getFullName());
+        if (updated.getTitle() != null) existing.setTitle(updated.getTitle());
+        if (updated.getCurrentCompany() != null) existing.setCurrentCompany(updated.getCurrentCompany());
+        if (updated.getCollege() != null) existing.setCollege(updated.getCollege());
+        if (updated.getLocation() != null) existing.setLocation(updated.getLocation());
+        if (updated.getEmail() != null) existing.setEmail(updated.getEmail());
+        if (updated.getPhone() != null) existing.setPhone(updated.getPhone());
+        if (updated.getLinkedInUrl() != null) existing.setLinkedInUrl(updated.getLinkedInUrl());
+        if (updated.getGithubUrl() != null) existing.setGithubUrl(updated.getGithubUrl());
+        if (updated.getAvatarUrl() != null) existing.setAvatarUrl(updated.getAvatarUrl());
+        if (updated.getResumeUrl() != null) existing.setResumeUrl(updated.getResumeUrl());
+        if (updated.getSummary() != null) existing.setSummary(updated.getSummary());
+        if (updated.getStatusBadge() != null) existing.setStatusBadge(updated.getStatusBadge());
+        existing.setUpdatedAt(java.time.LocalDateTime.now());
+        return personalInfoRepository.save(existing);
+    }
+
+    // CRUD: Projects
+    @Transactional
+    public Project saveProject(Project project) {
+        return projectRepository.save(project);
+    }
+
+    @Transactional
+    public Project updateProject(Long id, Project updated) {
+        Project existing = projectRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Project not found with id: " + id));
+        if (updated.getTitle() != null) existing.setTitle(updated.getTitle());
+        if (updated.getDescription() != null) existing.setDescription(updated.getDescription());
+        if (updated.getTechnologies() != null) existing.setTechnologies(updated.getTechnologies());
+        if (updated.getGithubUrl() != null) existing.setGithubUrl(updated.getGithubUrl());
+        if (updated.getLiveUrl() != null) existing.setLiveUrl(updated.getLiveUrl());
+        if (updated.getCategory() != null) existing.setCategory(updated.getCategory());
+        existing.setFeatured(updated.isFeatured());
+        if (updated.getBullets() != null) existing.setBullets(updated.getBullets());
+        return projectRepository.save(existing);
+    }
+
+    @Transactional
+    public void deleteProject(Long id) {
+        projectRepository.deleteById(id);
+    }
+
+    // CRUD: Company Subprojects
+    @Transactional
+    public SubProject addSubProject(Long experienceId, SubProject subProject) {
+        Experience exp;
+        if (experienceId != null) {
+            exp = experienceRepository.findById(experienceId)
+                    .orElseGet(() -> experienceRepository.findFirstByOrderByDisplayOrderAsc().orElse(null));
+        } else {
+            exp = experienceRepository.findFirstByOrderByDisplayOrderAsc().orElse(null);
+        }
+        if (exp != null) {
+            exp.addSubProject(subProject);
+            experienceRepository.save(exp);
+            return subProject;
+        }
+        return subProjectRepository.save(subProject);
+    }
+
+    @Transactional
+    public void deleteSubProject(Long id) {
+        subProjectRepository.deleteById(id);
     }
 }
