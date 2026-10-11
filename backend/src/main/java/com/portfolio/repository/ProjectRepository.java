@@ -10,4 +10,5 @@ import java.util.List;
 public interface ProjectRepository extends JpaRepository<Project, Long> {
     List<Project> findByFeaturedTrue();
     List<Project> findByCategoryIgnoreCase(String category);
+    List<Project> findAllByOrderByDisplayOrderAsc();
 }

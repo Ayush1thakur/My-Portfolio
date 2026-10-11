@@ -33,15 +33,12 @@ public class HealthController {
         Map<String, Object> healthInfo = new HashMap<>();
         healthInfo.put("status", "UP");
         healthInfo.put("framework", "Spring Boot 3.4.3");
-        healthInfo.put("javaVersion", System.getProperty("java.version"));
-        healthInfo.put("serverTime", java.time.Instant.now().toString());
 
-        // Check DB connection
         boolean dbConnected = false;
         String dbProduct = "Unknown";
         try (Connection connection = dataSource.getConnection()) {
             dbConnected = !connection.isClosed();
-            dbProduct = connection.getMetaData().getDatabaseProductName() + " " + connection.getMetaData().getDatabaseProductVersion();
+            dbProduct = connection.getMetaData().getDatabaseProductName();
         } catch (Exception e) {
             dbProduct = "Connection error: " + e.getMessage();
         }
@@ -52,10 +49,5 @@ public class HealthController {
         healthInfo.put("neonBranch", neonBranch);
 
         return ResponseEntity.ok(ApiResponse.ok("Backend and Database are operational", healthInfo));
-    }
-
-    @GetMapping("/hello")
-    public ResponseEntity<ApiResponse<String>> hello() {
-        return ResponseEntity.ok(ApiResponse.ok("Hello from Spring Boot Backend!", "Connected successfully"));
     }
 }

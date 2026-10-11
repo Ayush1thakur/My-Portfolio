@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayush Thakur · Associate Software Engineer | Portfolio</title>
+  <meta name="description" content="Portfolio of Ayush Thakur - Associate Software Engineer at MAQ Software. Engineering high-throughput data pipelines, cloud backends, and AI systems.">
+  <meta name="author" content="Ayush Thakur">
+
+  <style>
+    /* ==========================================================================
+       WHITE & ORANGE AESTHETIC DESIGN SYSTEM (Minimal, High-Signal, Refined)
+       ========================================================================== */
+    :root {
+      /* Light Mode (Clean White & Warm Tangerine Orange) */
+      --bg-base: #FFFFFF;
+      --bg-subtle: #FAF9F6;
+      --surface: #FFFFFF;
+      --surface-elevated: #FFFBF7;
+      --border-subtle: #F0EDE8;
+      --border-color: #E7E3DC;
+      --border-hover: #FDBA74;
+
+      --text-main: #1C1917;       /* Deep Charcoal */
+      --text-body: #44403C;       /* Warm Gray Body */
+      --text-muted: #78716C;      /* Muted Description */
+      --text-subtle: #A8A29E;     /* Captions & Tags */
+
+      --orange-primary: #EA580C;  /* Sunset Orange */
+      --orange-vibrant: #F97316;  /* Vivid Tangerine */
+      --orange-hover: #C2410C;
+      --orange-light: #FFF7ED;    /* Soft Tint Background */
+      --orange-border: #FFEDD5;   /* Soft Pill Border */
+      --orange-glow: rgba(249, 115, 22, 0.25);
+
+      --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(234, 88, 12, 0.03);
+      --card-hover-shadow: 0 12px 28px -6px rgba(234, 88, 12, 0.12), 0 4px 10px -2px rgba(0, 0, 0, 0.03);
+      --glass-nav: rgba(255, 255, 255, 0.92);
+
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-full: 9999px;
+    }
+
+    [data-theme="dark"] {
+      /* Dark Mode Option (Midnight Charcoal & Warm Amber Orange) */
+      --bg-base: #0C0A09;
+      --bg-subtle: #141210;
+      --surface: #181614;
+      --surface-elevated: #201C19;
+      --border-subtle: #292524;
+      --border-color: #38332E;
+      --border-hover: #EA580C;
+
+      --text-main: #FAFAF9;
+      --text-body: #E7E5E4;
+      --text-muted: #A8A29E;
+      --text-subtle: #78716C;
+
+      --orange-primary: #FB923C;
+      --orange-vibrant: #F97316;
+      --orange-hover: #FED7AA;
+      --orange-light: rgba(249, 115, 22, 0.12);
+      --orange-border: rgba(249, 115, 22, 0.25);
+      --orange-glow: rgba(251, 146, 60, 0.35);
+
+      --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      --card-hover-shadow: 0 14px 30px -6px rgba(0, 0, 0, 0.6), 0 0 15px rgba(249, 115, 22, 0.12);
+      --glass-nav: rgba(12, 10, 9, 0.92);
+    }
+
+    /* Reset & Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", Helvetica, Arial, sans-serif;
+      background-color: var(--bg-base);
+      color: var(--text-body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transition: background-color 0.25s ease, color 0.25s ease;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 5rem;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    .font-mono {
+      font-family: ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, monospace;
+    }
+
+    /* Layout Container */
+    .container {
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* Top Sticky Minimal Bar */
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--glass-nav);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 0.75rem 0;
+      margin-bottom: 2rem;
+      transition: all 0.25s ease;
+    }
+
+    .top-bar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: var(--radius-full);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      background: var(--orange-light);
+      border: 1px solid var(--orange-border);
+      color: var(--orange-primary);
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--orange-vibrant);
+      box-shadow: 0 0 0 0 var(--orange-glow);
+      animation: pulse 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 var(--orange-glow);
+      }
+      70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 7px rgba(249, 115, 22, 0);
+      }
+      100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(249, 115, 22, 0);
+      }
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .icon-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+      background: var(--surface);
+      color: var(--text-main);
+      transition: all 0.2s ease;
+    }
+
+    .icon-btn:hover {
+      border-color: var(--orange-primary);
+      color: var(--orange-primary);
+      transform: translateY(-1px);
+    }
+
+    .icon-btn svg {
+      width: 17px;
+      height: 17px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+    }
+
+    /* ==========================================================================
+       HERO: CENTERED CIRCLE IMAGE & BRIEF DESCRIPTION
+       ========================================================================== */
+    .hero-center {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem 0 2.5rem 0;
+      border-bottom: 1px solid var(--border-subtle);
+      margin-bottom: 3rem;
+    }
+
+    /* Centered Circular Photo */
+    .avatar-circle-wrapper {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+
+    .avatar-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      background: var(--surface-elevated);
+      border: 4px solid var(--surface);
+      box-shadow: 0 0 0 4px var(--orange-vibrant), 0 14px 30px -4px var(--orange-glow);
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+    }
+
+    .avatar-circle:hover {
+      transform: scale(1.04);
+      box-shadow: 0 0 0 5px var(--orange-hover), 0 18px 36px -4px rgba(249, 115, 22, 0.35);
+    }
+
+    .avatar-halo-badge {
+      position: absolute;
+      bottom: 4px;
+      right: 12px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    .avatar-halo-badge span {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--orange-vibrant);
+    }
+
+    .hero-name {
+      font-size: 2.25rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--text-main);
+      line-height: 1.2;
+      margin-bottom: 0.35rem;
+    }
+
+    .hero-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--orange-primary);
+      margin-bottom: 1.1rem;
+    }
+
+    /* Company & College Highlight Badges */
+    .affiliation-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.65rem;
+      margin-bottom: 1.35rem;
+    }
+
+    .affiliation-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.4rem 0.9rem;
+      background: var(--orange-light);
+      border: 1px solid var(--orange-border);
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-main);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+      transition: all 0.2s ease;
+    }
+
+    .affiliation-badge:hover {
+      border-color: var(--orange-primary);
+      transform: translateY(-1px);
+    }
+
+    .affiliation-badge svg {
+      width: 15px;
+      height: 15px;
+      stroke: var(--orange-primary);
+      stroke-width: 2;
+      flex-shrink: 0;
+    }
+
+    .affiliation-badge .accent-sub {
+      color: var(--orange-primary);
+      font-weight: 700;
+    }
+
+    /* Brief Description About Me */
+    .hero-bio {
+      font-size: 1.05rem;
+      color: var(--text-body);
+      max-width: 650px;
+      line-height: 1.65;
+      margin-bottom: 1.75rem;
+      font-weight: 400;
+    }
+
+    .hero-bio strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    /* Action Buttons Under Bio */
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.65rem;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.55rem 1.15rem;
+      border-radius: var(--radius-md);
+      background: var(--orange-vibrant);
+      color: #FFFFFF !important;
+      font-size: 0.875rem;
+      font-weight: 600;
+      box-shadow: 0 4px 12px var(--orange-glow);
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--orange-hover);
+      box-shadow: 0 6px 16px rgba(194, 65, 12, 0.35);
+      transform: translateY(-1px);
+    }
+
+    .btn-primary svg {
+      width: 15px;
+      height: 15px;
+      stroke: #FFFFFF;
+      stroke-width: 2.2;
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.55rem 1.15rem;
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--orange-primary);
+      color: var(--orange-primary);
+      transform: translateY(-1px);
+      box-shadow: var(--card-shadow);
+    }
+
+    .btn-secondary svg {
+      width: 15px;
+      height: 15px;
+      stroke: currentColor;
+      stroke-width: 2;
+    }
+
+    /* ==========================================================================
+       SECTION HEADERS & CARDS
+       ========================================================================== */
+    .section-wrap {
+      margin-bottom: 3.5rem;
+    }
+
+    .section-headline {
+      margin-bottom: 1.5rem;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--orange-primary);
+      margin-bottom: 0.35rem;
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+
+    /* Card Styling */
+    .card-block {
+      background: var(--surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.6rem;
+      margin-bottom: 1.25rem;
+      box-shadow: var(--card-shadow);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .card-block:hover {
+      border-color: var(--border-hover);
+      box-shadow: var(--card-hover-shadow);
+      transform: translateY(-2px);
+    }
+
+    /* Tech Pills */
+    .tech-tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0.75rem 0 0.9rem 0;
+    }
+
+    .tech-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.2rem 0.55rem;
+      background: var(--orange-light);
+      border: 1px solid var(--orange-border);
+      border-radius: var(--radius-sm);
+      color: var(--orange-primary);
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      transition: all 0.15s ease;
+    }
+
+    .tech-tag:hover {
+      background: var(--orange-vibrant);
+      color: #FFFFFF;
+      border-color: var(--orange-vibrant);
+    }
+
+    /* Bullet Points */
+    .bullet-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .bullet-item {
+      font-size: 0.92rem;
+      color: var(--text-body);
+      position: relative;
+      padding-left: 1.25rem;
+      line-height: 1.55;
+    }
+
+    .bullet-item::before {
+      content: "•";
+      position: absolute;
+      left: 0.1rem;
+      top: -0.1rem;
+      color: var(--orange-vibrant);
+      font-size: 1.25rem;
+      font-weight: 800;
+    }
+
+    .bullet-item strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    /* Company Card Specifics */
+    .company-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      margin-bottom: 1.35rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px dashed var(--border-color);
+    }
+
+    @media (min-width: 600px) {
+      .company-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+      }
+    }
+
+    .company-name {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .company-role {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--orange-primary);
+    }
+
+    .company-dates {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-weight: 500;
+    }
+
+    .subproject-box {
+      margin-bottom: 1.6rem;
+      padding-left: 1rem;
+      border-left: 2px solid var(--border-color);
+      transition: border-color 0.2s ease;
+    }
+
+    .subproject-box:last-child {
+      margin-bottom: 0;
+    }
+
+    .subproject-box:hover {
+      border-left-color: var(--orange-vibrant);
+    }
+
+    .subproject-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* ==========================================================================
+       PERSONAL PROJECTS
+       ========================================================================== */
+    .project-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .project-link-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--orange-primary);
+      background: var(--orange-light);
+      border: 1px solid var(--orange-border);
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-sm);
+      transition: all 0.2s ease;
+    }
+
+    .project-link-pill:hover {
+      background: var(--orange-vibrant);
+      color: #FFFFFF;
+      border-color: var(--orange-vibrant);
+    }
+
+    .project-link-pill svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      stroke-width: 2;
+    }
+
+    .project-desc-text {
+      font-size: 0.95rem;
+      color: var(--text-body);
+      margin-bottom: 0.75rem;
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       ACHIEVEMENTS & CERTIFICATIONS
+       ========================================================================== */
+    .metrics-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+
+    @media (min-width: 600px) {
+      .metrics-row {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .metric-card {
+      background: var(--surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.15rem;
+      text-align: left;
+      box-shadow: var(--card-shadow);
+      transition: all 0.2s ease;
+      border-top: 3px solid var(--orange-vibrant);
+    }
+
+    .metric-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
+      box-shadow: var(--card-hover-shadow);
+    }
+
+    .metric-number {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 0.35rem;
+    }
+
+    .metric-number .accent {
+      color: var(--orange-vibrant);
+    }
+
+    .metric-label {
+      font-size: 0.825rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .cert-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.85rem 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.65rem;
+      box-shadow: var(--card-shadow);
+      transition: all 0.2s ease;
+    }
+
+    .cert-item:hover {
+      border-color: var(--orange-primary);
+      transform: translateX(2px);
+    }
+
+    .cert-icon {
+      color: var(--orange-vibrant);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .cert-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      stroke-width: 2.2;
+    }
+
+    .cert-text {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    /* ==========================================================================
+       SOCIALS & CONTACT
+       ========================================================================== */
+    .socials-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+
+    @media (min-width: 550px) {
+      .socials-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 1rem 1.15rem;
+      background: var(--surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      color: var(--text-main);
+      box-shadow: var(--card-shadow);
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .contact-card:hover {
+      border-color: var(--orange-vibrant);
+      color: var(--orange-primary);
+      transform: translateY(-2px);
+      box-shadow: var(--card-hover-shadow);
+    }
+
+    .contact-icon-box {
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-sm);
+      background: var(--orange-light);
+      color: var(--orange-vibrant);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-icon-box svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      stroke-width: 2;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .contact-type {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+    }
+
+    .contact-val {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-main);
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .copy-bubble {
+      position: absolute;
+      top: -28px;
+      right: 12px;
+      background: var(--text-main);
+      color: var(--bg-base);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      z-index: 50;
+    }
+
+    .copy-bubble.show {
+      opacity: 1;
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    footer {
+      margin-top: 3.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    @media (min-width: 600px) {
+      footer {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    .api-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 0.75rem;
+    }
+
+    .api-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--orange-vibrant);
+    }
+
+    /* Print Stylesheet */
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        padding-bottom: 0 !important;
+      }
+      .top-bar, .top-actions, .hero-actions, .copy-bubble, footer {
+        display: none !important;
+      }
+      .container {
+        max-width: 100% !important;
+        padding: 0 !important;
+      }
+      .card-block, .metric-card, .cert-item, .contact-card {
+        border: 1px solid #d1d5db !important;
+        box-shadow: none !important;
+        break-inside: avoid;
+      }
+      .avatar-circle {
+        width: 90px !important;
+        height: 90px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       TOP BAR (Sticky, Minimal Status & Actions)
+       ========================================================================== -->
+  <nav class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="status-pill">
+        <span class="pulse-dot"></span>
+        <span id="nav-status">Open to Roles · 2026</span>
+      </div>
+
+      <div class="top-actions">
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle dark/light theme" title="Toggle theme">
+          <svg id="theme-icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <svg id="theme-icon-moon" style="display:none;" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+
+        <button onclick="window.print()" class="icon-btn" aria-label="Print resume" title="Print / PDF Resume">
+          <svg viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <!-- ==========================================================================
+         HERO SECTION: CENTERED IMAGE, COMPANY, COLLEGE & BIO
+         ========================================================================== -->
+    <section class="hero-center" id="home">
+      <!-- Centered Circular Image -->
+      <div class="avatar-circle-wrapper">
+        <img src="./profile.jpg" alt="Ayush Thakur" class="avatar-circle" id="hero-avatar"
+             onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'140\' height=\'140\' viewBox=\'0 0 140 140\'><rect width=\'140\' height=\'140\' fill=\'%23EA580C\'/><text x=\'50%25\' y=\'55%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23ffffff\' font-family=\'sans-serif\' font-size=\'48\' font-weight=\'bold\'>AT</text></svg>';">
+        <div class="avatar-halo-badge" title="Active">
+          <span></span>
+        </div>
+      </div>
+
+      <h1 class="hero-name" id="hero-name">Ayush Thakur</h1>
+      <div class="hero-title" id="hero-title">Associate Software Engineer</div>
+
+      <!-- Current Company & College Prominent Badges -->
+      <div class="affiliation-row">
+        <div class="affiliation-badge">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+          <span>Company: <strong class="accent-sub" id="hero-company">MAQ Software</strong> (Noida, India)</span>
+        </div>
+
+        <div class="affiliation-badge">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+          <span>College: <strong class="accent-sub" id="hero-college">Chitkara University</strong> (CGPA: 8.41)</span>
+        </div>
+      </div>
+
+      <!-- Brief Description About Me -->
+      <p class="hero-bio" id="hero-bio">
+        Associate Software Engineer at <strong>MAQ Software</strong> specializing in <strong>distributed data pipelines</strong>, 
+        enterprise migration platforms, and scalable backend architectures. Experienced in processing <strong>10M+ records</strong> with fault-tolerant retry strategies, automating Tableau-to-Power BI conversions for <strong>1,000+ reports</strong>, and engineering robust APIs using <strong>Python, C#, Java Spring Boot, and AI agent frameworks</strong>.
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="hero-actions">
+        <a href="#company-projects" class="btn-primary">
+          <span>View Company Projects</span>
+          <svg viewBox="0 0 24 24" fill="none"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"></path></svg>
+        </a>
+        <a href="#socials" class="btn-secondary">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          <span>Get In Touch</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 1: COMPANY PROJECTS (MAQ Software)
+         ========================================================================== -->
+    <section class="section-wrap" id="company-projects">
+      <div class="section-headline">
+        <span class="section-tag">MAQ SOFTWARE · PRODUCTION</span>
+        <h2 class="section-title">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" color="var(--orange-vibrant)"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+          Company Projects
+        </h2>
+        <p class="section-subtitle">Production engineering, distributed pipelines, and licensing architecture</p>
+      </div>
+
+      <div class="card-block">
+        <div class="company-header">
+          <div>
+            <div class="company-name">MAQ Software</div>
+            <div class="company-role">Associate Software Engineer · Noida, India</div>
+          </div>
+          <div class="company-dates">Oct 2025 – Present</div>
+        </div>
+
+        <!-- Sub-project 1: MigrateFAST -->
+        <div class="subproject-box">
+          <div class="subproject-title">
+            <span>MigrateFAST</span>
+          </div>
+
+          <div class="tech-tag-row">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Flask</span>
+            <span class="tech-tag">LangGraph</span>
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Azure</span>
+            <span class="tech-tag">Tableau</span>
+            <span class="tech-tag">Power BI</span>
+          </div>
+
+          <ul class="bullet-list">
+            <li class="bullet-item">Developed internal migration platform supporting <strong>1,000+ report migrations</strong>.</li>
+            <li class="bullet-item">Built distributed data-processing pipelines handling <strong>10M+ records</strong> with optimized retry workflows <strong>(+35% reliability)</strong>.</li>
+            <li class="bullet-item">Architected microservice-oriented backend components for high availability.</li>
+            <li class="bullet-item">Automated E2E and regression suites using Playwright.</li>
+            <li class="bullet-item">Integrated telemetry and monitoring with Azure Application Insights.</li>
+          </ul>
+        </div>
+
+        <!-- Sub-project 2: SaaS Tools License Manager -->
+        <div class="subproject-box">
+          <div class="subproject-title">
+            <span>SaaS Tools License Manager</span>
+          </div>
+
+          <div class="tech-tag-row">
+            <span class="tech-tag">C#</span>
+            <span class="tech-tag">ASP.NET Core</span>
+            <span class="tech-tag">SQL</span>
+            <span class="tech-tag">TypeScript</span>
+          </div>
+
+          <ul class="bullet-list">
+            <li class="bullet-item">Built secure REST APIs for licensing with rate limiting and authentication across <strong>10+ endpoints</strong>.</li>
+            <li class="bullet-item">Implemented server-clock SQL license validation across <strong>100% of activation checks</strong>.</li>
+            <li class="bullet-item">Conducted load and performance stress testing to guarantee low-latency validation under load.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 2: PERSONAL PROJECTS
+         ========================================================================== -->
+    <section class="section-wrap" id="personal-projects">
+      <div class="section-headline">
+        <span class="section-tag">OPEN SOURCE &amp; FULL STACK</span>
+        <h2 class="section-title">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" color="var(--orange-vibrant)"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+          Personal Projects
+        </h2>
+        <p class="section-subtitle">Architected systems, microservices, and platforms</p>
+      </div>
+
+      <!-- MyShop -->
+      <div class="card-block">
+        <div class="project-top">
+          <h3 class="project-title">MyShop</h3>
+          <a href="https://github.com/Ayush1thakur" target="_blank" rel="noopener noreferrer" class="project-link-pill">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            <span>GitHub Repository</span>
+          </a>
+        </div>
+
+        <p class="project-desc-text">
+          High-performance E-commerce backend platform for user authentication, catalog management, shopping cart operations, and transactional order fulfillment.
+        </p>
+
+        <div class="tech-tag-row">
+          <span class="tech-tag">Java</span>
+          <span class="tech-tag">Spring Boot</span>
+          <span class="tech-tag">Spring Data JPA</span>
+          <span class="tech-tag">Hibernate</span>
+          <span class="tech-tag">SQL</span>
+          <span class="tech-tag">Spring Security</span>
+        </div>
+
+        <ul class="bullet-list">
+          <li class="bullet-item">Architected core microservice controllers and services for user, catalog, cart, and order processing.</li>
+          <li class="bullet-item">Optimized database queries and transactional consistency using JPA / Hibernate.</li>
+          <li class="bullet-item">Secured role-based access control (RBAC) and token authentication with Spring Security.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 3: ACHIEVEMENTS & CERTIFICATIONS
+         ========================================================================== -->
+    <section class="section-wrap" id="achievements">
+      <div class="section-headline">
+        <span class="section-tag">MILESTONES &amp; CREDENTIALS</span>
+        <h2 class="section-title">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" color="var(--orange-vibrant)"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+          Achievements &amp; Certifications
+        </h2>
+        <p class="section-subtitle">Quantified engineering impact and professional certifications</p>
+      </div>
+
+      <!-- 3 Key Metric Pods -->
+      <div class="metrics-row">
+        <div class="metric-card">
+          <div class="metric-number">10M<span class="accent">+</span></div>
+          <div class="metric-label">Records processed through fault-tolerant data pipelines (+35% reliability gain) at MAQ Software.</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-number">1,000<span class="accent">+</span></div>
+          <div class="metric-label">Automated Tableau-to-Power BI reports migrated through dedicated migration orchestration platform.</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-number">8.41 <span class="accent">CGPA</span></div>
+          <div class="metric-label">Academic distinction in B.E. Computer Science &amp; Engineering from Chitkara University (2022–2026).</div>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div class="cert-item">
+        <div class="cert-icon">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+        </div>
+        <div class="cert-text">Microsoft Certified: Azure Fundamentals (AZ-900) &amp; Cloud Infrastructure Architecture</div>
+      </div>
+
+      <div class="cert-item">
+        <div class="cert-icon">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+        </div>
+        <div class="cert-text">Generative AI Engineering: LangChain, LangGraph, RAG Systems &amp; FastMCP</div>
+      </div>
+
+      <div class="cert-item">
+        <div class="cert-icon">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+        </div>
+        <div class="cert-text">Enterprise Java Spring Boot, Microservices &amp; Spring Data JPA Performance</div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 4: SOCIALS & CONTACT
+         ========================================================================== -->
+    <section class="section-wrap" id="socials">
+      <div class="section-headline">
+        <span class="section-tag">CONNECT &amp; REACH OUT</span>
+        <h2 class="section-title">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" color="var(--orange-vibrant)"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          Socials &amp; Contact
+        </h2>
+        <p class="section-subtitle">Let's discuss opportunities, distributed systems, or software engineering</p>
+      </div>
+
+      <div class="socials-grid">
+        <!-- Email -->
+        <a href="mailto:ayush.thaku7@gmail.com" class="contact-card" id="email-card" title="Click to copy email">
+          <div class="contact-icon-box">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </div>
+          <div class="contact-info">
+            <span class="contact-type">Email (Click to copy)</span>
+            <span class="contact-val">ayush.thaku7@gmail.com</span>
+          </div>
+          <span class="copy-bubble" id="email-bubble">Copied!</span>
+        </a>
+
+        <!-- Phone -->
+        <a href="tel:+919877247382" class="contact-card" id="phone-card" title="Click to copy phone">
+          <div class="contact-icon-box">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          </div>
+          <div class="contact-info">
+            <span class="contact-type">Phone (Click to copy)</span>
+            <span class="contact-val">+91-9877247382</span>
+          </div>
+          <span class="copy-bubble" id="phone-bubble">Copied!</span>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com/in/ayush-thakur1" target="_blank" rel="noopener noreferrer" class="contact-card">
+          <div class="contact-icon-box">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </div>
+          <div class="contact-info">
+            <span class="contact-type">LinkedIn</span>
+            <span class="contact-val">in/ayush-thakur1</span>
+          </div>
+        </a>
+
+        <!-- GitHub -->
+        <a href="https://github.com/Ayush1thakur" target="_blank" rel="noopener noreferrer" class="contact-card">
+          <div class="contact-icon-box">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          </div>
+          <div class="contact-info">
+            <span class="contact-type">GitHub</span>
+            <span class="contact-val">github.com/Ayush1thakur</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FOOTER
+         ========================================================================== -->
+    <footer>
+      <div>&copy; <span id="year-copy">2026</span> Ayush Thakur · Associate Software Engineer</div>
+      <div class="api-pill">
+        <span class="api-dot" id="api-dot"></span>
+        <span id="api-status-text">Backend API · Connected</span>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- ==========================================================================
+       VANILLA JAVASCRIPT: THEME & CLICKS & LIVE API SYNC
+       ========================================================================== -->
+  <script>
+    (function () {
+      'use strict';
+
+      // 1. Theme Management (White & Orange default)
+      const THEME_KEY = 'portfolio_theme_mode';
+      const root = document.documentElement;
+      const themeToggleBtn = document.getElementById('theme-toggle');
+      const sunIcon = document.getElementById('theme-icon-sun');
+      const moonIcon = document.getElementById('theme-icon-moon');
+
+      function getSavedTheme() {
+        return localStorage.getItem(THEME_KEY) || 'light';
+      }
+
+      function updateTheme(theme) {
+        root.setAttribute('data-theme', theme);
+        if (theme === 'dark') {
+          sunIcon.style.display = 'none';
+          moonIcon.style.display = 'block';
+        } else {
+          sunIcon.style.display = 'block';
+          moonIcon.style.display = 'none';
+        }
+      }
+
+      updateTheme(getSavedTheme());
+
+      if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+          const current = root.getAttribute('data-theme') || 'light';
+          const next = current === 'dark' ? 'light' : 'dark';
+          localStorage.setItem(THEME_KEY, next);
+          updateTheme(next);
+        });
+      }
+
+      // 2. Click to Copy Contact Information
+      function bindCopy(cardId, bubbleId, textToCopy) {
+        const card = document.getElementById(cardId);
+        const bubble = document.getElementById(bubbleId);
+        if (!card || !bubble) return;
+
+        card.addEventListener('click', (e) => {
+          if (e.ctrlKey || e.metaKey || e.button === 1) return;
+          e.preventDefault();
+
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(textToCopy).then(() => {
+              bubble.classList.add('show');
+              setTimeout(() => bubble.classList.remove('show'), 1600);
+            }).catch(() => {
+              window.location.href = card.getAttribute('href');
+            });
+          } else {
+            window.location.href = card.getAttribute('href');
+          }
+        });
+      }
+
+      bindCopy('email-card', 'email-bubble', 'ayush.thaku7@gmail.com');
+      bindCopy('phone-card', 'phone-bubble', '+91-9877247382');
+
+      const yr = document.getElementById('year-copy');
+      if (yr) yr.textContent = new Date().getFullYear();
+
+      // 3. Live Sync with /api/portfolio
+      async function syncPortfolioData() {
+        const apiDot = document.getElementById('api-dot');
+        const apiStatus = document.getElementById('api-status-text');
+
+        try {
+          const res = await fetch('http://localhost:8081/api/portfolio');
+          if (res.ok) {
+            const json = await res.json();
+            if (json && json.data) {
+              const d = json.data;
+              if (d.personalInfo) {
+                if (d.personalInfo.fullName) document.getElementById('hero-name').textContent = d.personalInfo.fullName;
+                if (d.personalInfo.title) document.getElementById('hero-title').textContent = d.personalInfo.title;
+                if (d.personalInfo.currentCompany) document.getElementById('hero-company').textContent = d.personalInfo.currentCompany;
+                if (d.personalInfo.college) document.getElementById('hero-college').textContent = d.personalInfo.college;
+                if (d.personalInfo.summary) document.getElementById('hero-bio').textContent = d.personalInfo.summary;
+              }
+              apiStatus.textContent = 'REST API: /api/portfolio (Live)';
+              return;
+            }
+          }
+        } catch (e) {
+          // If offline or opening via file://, graceful fallback to bundled static content
+        }
+
+        if (apiStatus) apiStatus.textContent = 'Design: White & Orange (Ready)';
+      }
+
+      syncPortfolioData();
+    })();
+  </script>
+</body>
+</html>

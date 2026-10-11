@@ -2,6 +2,8 @@ package com.portfolio.model;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "projects")
@@ -22,13 +24,19 @@ public class Project {
     private String liveUrl;
     private String category;
     private boolean featured;
+    private int displayOrder;
+
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name = "project_bullets", joinColumns = @JoinColumn(name = "project_id"))
+    @Column(name = "bullet", length = 1000)
+    private List<String> bullets = new ArrayList<>();
 
     private LocalDateTime createdAt = LocalDateTime.now();
 
     public Project() {
     }
 
-    public Project(String title, String description, String technologies, String githubUrl, String liveUrl, String category, boolean featured) {
+    public Project(String title, String description, String technologies, String githubUrl, String liveUrl, String category, boolean featured, int displayOrder, List<String> bullets) {
         this.title = title;
         this.description = description;
         this.technologies = technologies;
@@ -36,6 +44,8 @@ public class Project {
         this.liveUrl = liveUrl;
         this.category = category;
         this.featured = featured;
+        this.displayOrder = displayOrder;
+        this.bullets = bullets != null ? bullets : new ArrayList<>();
         this.createdAt = LocalDateTime.now();
     }
 
@@ -101,6 +111,22 @@ public class Project {
 
     public void setFeatured(boolean featured) {
         this.featured = featured;
+    }
+
+    public int getDisplayOrder() {
+        return displayOrder;
+    }
+
+    public void setDisplayOrder(int displayOrder) {
+        this.displayOrder = displayOrder;
+    }
+
+    public List<String> getBullets() {
+        return bullets;
+    }
+
+    public void setBullets(List<String> bullets) {
+        this.bullets = bullets;
     }
 
     public LocalDateTime getCreatedAt() {
