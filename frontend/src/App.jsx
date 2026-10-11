@@ -115,6 +115,13 @@ export default function App() {
             <a href="#socials" className="btn-outline">
               Contact &amp; Socials
             </a>
+            <button
+              onClick={() => window.print()}
+              className="btn-outline btn-resume"
+              title="View & print / download clean PDF resume"
+            >
+              📄 View Resume
+            </button>
           </div>
         </section>
 
@@ -135,36 +142,39 @@ export default function App() {
               <span className="mono-date">Oct 2025 – Present</span>
             </div>
 
-            {/* Subproject 1: MigrateFAST */}
-            <div className="subproject-block">
-              <h4 className="subproject-title">MigrateFAST</h4>
-              <div className="tech-tags">
-                {['Python', 'Flask', 'LangGraph', 'React', 'Azure', 'Tableau', 'Power BI'].map((t) => (
-                  <span key={t} className="tech-tag">{t}</span>
-                ))}
+            {/* 2-Column Responsive Grid on Laptops */}
+            <div className="subprojects-container">
+              {/* Subproject 1: MigrateFAST */}
+              <div className="subproject-block">
+                <h4 className="subproject-title">MigrateFAST</h4>
+                <div className="tech-tags">
+                  {['Python', 'Flask', 'LangGraph', 'React', 'Azure', 'Tableau', 'Power BI'].map((t) => (
+                    <span key={t} className="tech-tag">{t}</span>
+                  ))}
+                </div>
+                <ul className="bullet-tree">
+                  <li>Developed internal migration platform supporting <strong>1,000+ report migrations</strong>.</li>
+                  <li>Built distributed data-processing pipelines handling <strong>10M+ records</strong> with optimized retry workflows <strong>(+35% reliability)</strong>.</li>
+                  <li>Architected microservice-oriented backend components for high availability.</li>
+                  <li>Automated E2E and regression suites using Playwright.</li>
+                  <li>Integrated telemetry and monitoring with Azure Application Insights.</li>
+                </ul>
               </div>
-              <ul className="bullet-tree">
-                <li>Developed internal migration platform supporting <strong>1,000+ report migrations</strong>.</li>
-                <li>Built distributed data-processing pipelines handling <strong>10M+ records</strong> with optimized retry workflows <strong>(+35% reliability)</strong>.</li>
-                <li>Architected microservice-oriented backend components for high availability.</li>
-                <li>Automated E2E and regression suites using Playwright.</li>
-                <li>Integrated telemetry and monitoring with Azure Application Insights.</li>
-              </ul>
-            </div>
 
-            {/* Subproject 2: SaaS Tools License Manager */}
-            <div className="subproject-block">
-              <h4 className="subproject-title">SaaS Tools License Manager</h4>
-              <div className="tech-tags">
-                {['C#', 'ASP.NET Core', 'SQL', 'TypeScript'].map((t) => (
-                  <span key={t} className="tech-tag">{t}</span>
-                ))}
+              {/* Subproject 2: SaaS Tools License Manager */}
+              <div className="subproject-block">
+                <h4 className="subproject-title">SaaS Tools License Manager</h4>
+                <div className="tech-tags">
+                  {['C#', 'ASP.NET Core', 'SQL', 'TypeScript'].map((t) => (
+                    <span key={t} className="tech-tag">{t}</span>
+                  ))}
+                </div>
+                <ul className="bullet-tree">
+                  <li>Built secure REST APIs for licensing with rate limiting and authentication across <strong>10+ endpoints</strong>.</li>
+                  <li>Implemented server-clock SQL license validation across <strong>100% of activation checks</strong>.</li>
+                  <li>Conducted load and performance stress testing to guarantee low-latency validation under load.</li>
+                </ul>
               </div>
-              <ul className="bullet-tree">
-                <li>Built secure REST APIs for licensing with rate limiting and authentication across <strong>10+ endpoints</strong>.</li>
-                <li>Implemented server-clock SQL license validation across <strong>100% of activation checks</strong>.</li>
-                <li>Conducted load and performance stress testing to guarantee low-latency validation under load.</li>
-              </ul>
             </div>
           </div>
         </section>

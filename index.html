@@ -4,15 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ayush Thakur · Associate Software Engineer | Portfolio</title>
-  <meta name="description" content="Portfolio of Ayush Thakur - Associate Software Engineer at MAQ Software. Engineering high-throughput data pipelines, cloud backends, and AI systems.">
+  <meta name="description" content="Portfolio of Ayush Thakur - Associate Software Engineer at MAQ Software. Specializing in high-throughput data pipelines, cloud backends, and AI architectures.">
   <meta name="author" content="Ayush Thakur">
 
   <style>
     /* ==========================================================================
-       WHITE & ORANGE AESTHETIC DESIGN SYSTEM (Minimal, High-Signal, Refined)
+       WHITE & ORANGE AESTHETIC DESIGN SYSTEM (Completely Wide, Scaled & High-Signal)
        ========================================================================== */
     :root {
-      /* Light Mode (Clean White & Warm Tangerine Orange) */
+      /* Light Mode Palette */
       --bg-base: #FFFFFF;
       --bg-subtle: #FAF9F6;
       --surface: #FFFFFF;
@@ -23,7 +23,7 @@
 
       --text-main: #1C1917;       /* Deep Charcoal */
       --text-body: #44403C;       /* Warm Gray Body */
-      --text-muted: #78716C;      /* Muted Description */
+      --text-muted: #78716C;      /* Muted Subtitles */
       --text-subtle: #A8A29E;     /* Captions & Tags */
 
       --orange-primary: #EA580C;  /* Sunset Orange */
@@ -31,20 +31,21 @@
       --orange-hover: #C2410C;
       --orange-light: #FFF7ED;    /* Soft Tint Background */
       --orange-border: #FFEDD5;   /* Soft Pill Border */
-      --orange-glow: rgba(249, 115, 22, 0.25);
+      --orange-glow: rgba(249, 115, 22, 0.24);
 
-      --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(234, 88, 12, 0.03);
-      --card-hover-shadow: 0 12px 28px -6px rgba(234, 88, 12, 0.12), 0 4px 10px -2px rgba(0, 0, 0, 0.03);
-      --glass-nav: rgba(255, 255, 255, 0.92);
+      --card-shadow: 0 2px 5px rgba(0, 0, 0, 0.04), 0 3px 8px -2px rgba(234, 88, 12, 0.03);
+      --card-hover-shadow: 0 20px 42px -10px rgba(234, 88, 12, 0.16), 0 6px 16px -3px rgba(0, 0, 0, 0.04);
+      --glass-nav: rgba(255, 255, 255, 0.95);
 
       --radius-sm: 8px;
-      --radius-md: 12px;
-      --radius-lg: 16px;
+      --radius-md: 14px;
+      --radius-lg: 18px;
+      --radius-xl: 24px;
       --radius-full: 9999px;
     }
 
     [data-theme="dark"] {
-      /* Dark Mode Option (Midnight Charcoal & Warm Amber Orange) */
+      /* Dark Mode Palette */
       --bg-base: #0C0A09;
       --bg-subtle: #141210;
       --surface: #181614;
@@ -61,13 +62,13 @@
       --orange-primary: #FB923C;
       --orange-vibrant: #F97316;
       --orange-hover: #FED7AA;
-      --orange-light: rgba(249, 115, 22, 0.12);
-      --orange-border: rgba(249, 115, 22, 0.25);
+      --orange-light: rgba(249, 115, 22, 0.14);
+      --orange-border: rgba(249, 115, 22, 0.3);
       --orange-glow: rgba(251, 146, 60, 0.35);
 
-      --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-      --card-hover-shadow: 0 14px 30px -6px rgba(0, 0, 0, 0.6), 0 0 15px rgba(249, 115, 22, 0.12);
-      --glass-nav: rgba(12, 10, 9, 0.92);
+      --card-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+      --card-hover-shadow: 0 20px 42px -8px rgba(0, 0, 0, 0.7), 0 0 18px rgba(249, 115, 22, 0.15);
+      --glass-nav: rgba(12, 10, 9, 0.95);
     }
 
     /* Reset & Base */
@@ -86,14 +87,14 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", Helvetica, Arial, sans-serif;
       background-color: var(--bg-base);
       color: var(--text-body);
-      line-height: 1.6;
+      line-height: 1.65;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       transition: background-color 0.25s ease, color 0.25s ease;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      padding-bottom: 5rem;
+      padding-bottom: 6rem;
     }
 
     a {
@@ -113,25 +114,35 @@
       font-family: ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, monospace;
     }
 
-    /* Layout Container */
+    /* ==========================================================================
+       COMPLETELY WIDE CONTAINER (Generous, Expansive & Responsive on Laptops)
+       ========================================================================== */
     .container {
-      width: 100%;
-      max-width: 760px;
+      width: 94%;
+      max-width: 1380px; /* Expansive wide canvas */
       margin: 0 auto;
       padding: 0 1.25rem;
     }
 
-    /* Top Sticky Minimal Bar */
+    @media (min-width: 1024px) {
+      .container {
+        padding: 0 2.5rem;
+      }
+    }
+
+    /* ==========================================================================
+       TOP STICKY NAVIGATION BAR
+       ========================================================================== */
     .top-bar {
       position: sticky;
       top: 0;
       z-index: 100;
       background: var(--glass-nav);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border-subtle);
-      padding: 0.75rem 0;
-      margin-bottom: 2rem;
+      padding: 1rem 0;
+      margin-bottom: 3rem;
       transition: all 0.25s ease;
     }
 
@@ -144,19 +155,19 @@
     .status-pill {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.3rem 0.8rem;
+      gap: 0.55rem;
+      padding: 0.45rem 1.15rem;
       border-radius: var(--radius-full);
-      font-size: 0.8125rem;
-      font-weight: 600;
+      font-size: 0.9rem;
+      font-weight: 700;
       background: var(--orange-light);
       border: 1px solid var(--orange-border);
       color: var(--orange-primary);
     }
 
     .pulse-dot {
-      width: 8px;
-      height: 8px;
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
       background-color: var(--orange-vibrant);
       box-shadow: 0 0 0 0 var(--orange-glow);
@@ -170,7 +181,7 @@
       }
       70% {
         transform: scale(1);
-        box-shadow: 0 0 0 7px rgba(249, 115, 22, 0);
+        box-shadow: 0 0 0 9px rgba(249, 115, 22, 0);
       }
       100% {
         transform: scale(0.95);
@@ -181,297 +192,421 @@
     .top-actions {
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.75rem;
     }
 
     .icon-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 36px;
-      height: 36px;
+      width: 42px;
+      height: 42px;
       border-radius: var(--radius-sm);
       border: 1px solid var(--border-color);
       background: var(--surface);
       color: var(--text-main);
+      font-size: 1.1rem;
       transition: all 0.2s ease;
     }
 
     .icon-btn:hover {
       border-color: var(--orange-primary);
       color: var(--orange-primary);
-      transform: translateY(-1px);
+      transform: translateY(-2px);
     }
 
     .icon-btn svg {
-      width: 17px;
-      height: 17px;
+      width: 20px;
+      height: 20px;
       fill: none;
       stroke: currentColor;
-      stroke-width: 2;
+      stroke-width: 2.2;
     }
 
     /* ==========================================================================
-       HERO: CENTERED CIRCLE IMAGE & BRIEF DESCRIPTION
+       HERO: CENTERED CIRCLE PHOTO (BIGGER & PROMINENT)
        ========================================================================== */
     .hero-center {
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 1rem 0 2.5rem 0;
+      padding: 1.5rem 0 4rem 0;
       border-bottom: 1px solid var(--border-subtle);
-      margin-bottom: 3rem;
+      margin-bottom: 4.5rem;
     }
 
-    /* Centered Circular Photo */
     .avatar-circle-wrapper {
       position: relative;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
     }
 
+    /* Scaled Up Circular Avatar */
     .avatar-circle {
-      width: 140px;
-      height: 140px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       object-fit: cover;
       display: block;
       background: var(--surface-elevated);
-      border: 4px solid var(--surface);
-      box-shadow: 0 0 0 4px var(--orange-vibrant), 0 14px 30px -4px var(--orange-glow);
+      border: 5px solid var(--surface);
+      box-shadow: 0 0 0 5px var(--orange-vibrant), 0 20px 45px -6px var(--orange-glow);
       transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
     }
 
     .avatar-circle:hover {
-      transform: scale(1.04);
-      box-shadow: 0 0 0 5px var(--orange-hover), 0 18px 36px -4px rgba(249, 115, 22, 0.35);
+      transform: scale(1.05);
+      box-shadow: 0 0 0 7px var(--orange-hover), 0 24px 50px -6px rgba(249, 115, 22, 0.42);
     }
 
     .avatar-halo-badge {
       position: absolute;
-      bottom: 4px;
-      right: 12px;
-      width: 26px;
-      height: 26px;
+      bottom: 8px;
+      right: 14px;
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
       background: var(--surface);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
     }
 
     .avatar-halo-badge span {
-      width: 14px;
-      height: 14px;
+      width: 16px;
+      height: 16px;
       border-radius: 50%;
       background: var(--orange-vibrant);
     }
 
     .hero-name {
-      font-size: 2.25rem;
-      font-weight: 800;
-      letter-spacing: -0.03em;
+      font-size: clamp(2.75rem, 4.8vw, 4.25rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
       color: var(--text-main);
-      line-height: 1.2;
-      margin-bottom: 0.35rem;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
     }
 
     .hero-title {
-      font-size: 1.125rem;
-      font-weight: 600;
+      font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+      font-weight: 700;
       color: var(--orange-primary);
-      margin-bottom: 1.1rem;
+      margin-bottom: 1.5rem;
     }
 
-    /* Company & College Highlight Badges */
+    /* Affiliation Badges (Company & College) */
     .affiliation-row {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 0.65rem;
-      margin-bottom: 1.35rem;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
     }
 
     .affiliation-badge {
       display: inline-flex;
       align-items: center;
-      gap: 0.45rem;
-      padding: 0.4rem 0.9rem;
+      gap: 0.65rem;
+      padding: 0.6rem 1.4rem;
       background: var(--orange-light);
       border: 1px solid var(--orange-border);
       border-radius: var(--radius-full);
-      font-size: 0.85rem;
-      font-weight: 600;
+      font-size: 1.05rem;
+      font-weight: 650;
       color: var(--text-main);
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
       transition: all 0.2s ease;
     }
 
     .affiliation-badge:hover {
       border-color: var(--orange-primary);
-      transform: translateY(-1px);
+      transform: translateY(-2px);
     }
 
     .affiliation-badge svg {
-      width: 15px;
-      height: 15px;
+      width: 18px;
+      height: 18px;
       stroke: var(--orange-primary);
-      stroke-width: 2;
+      stroke-width: 2.3;
       flex-shrink: 0;
     }
 
     .affiliation-badge .accent-sub {
       color: var(--orange-primary);
-      font-weight: 700;
+      font-weight: 800;
     }
 
-    /* Brief Description About Me */
+    /* Description About Me */
     .hero-bio {
-      font-size: 1.05rem;
+      font-size: clamp(1.15rem, 1.5vw, 1.3rem);
       color: var(--text-body);
-      max-width: 650px;
-      line-height: 1.65;
-      margin-bottom: 1.75rem;
+      max-width: 1040px; /* Spacious, wide, beautiful reading line */
+      line-height: 1.75;
+      margin-bottom: 2.25rem;
       font-weight: 400;
     }
 
     .hero-bio strong {
       color: var(--text-main);
-      font-weight: 600;
+      font-weight: 700;
     }
 
-    /* Action Buttons Under Bio */
+    /* Action Buttons */
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 0.65rem;
+      gap: 1rem;
     }
 
     .btn-primary {
       display: inline-flex;
       align-items: center;
-      gap: 0.45rem;
-      padding: 0.55rem 1.15rem;
+      gap: 0.6rem;
+      padding: 0.8rem 1.85rem;
       border-radius: var(--radius-md);
       background: var(--orange-vibrant);
       color: #FFFFFF !important;
-      font-size: 0.875rem;
-      font-weight: 600;
-      box-shadow: 0 4px 12px var(--orange-glow);
+      font-size: 1.05rem;
+      font-weight: 700;
+      box-shadow: 0 5px 18px var(--orange-glow);
       transition: all 0.2s ease;
     }
 
     .btn-primary:hover {
       background: var(--orange-hover);
-      box-shadow: 0 6px 16px rgba(194, 65, 12, 0.35);
-      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(194, 65, 12, 0.4);
+      transform: translateY(-2px);
     }
 
     .btn-primary svg {
-      width: 15px;
-      height: 15px;
+      width: 18px;
+      height: 18px;
       stroke: #FFFFFF;
-      stroke-width: 2.2;
+      stroke-width: 2.5;
     }
 
     .btn-secondary {
       display: inline-flex;
       align-items: center;
-      gap: 0.45rem;
-      padding: 0.55rem 1.15rem;
+      gap: 0.6rem;
+      padding: 0.8rem 1.85rem;
       border-radius: var(--radius-md);
       background: var(--surface);
       border: 1px solid var(--border-color);
       color: var(--text-main);
-      font-size: 0.875rem;
-      font-weight: 600;
+      font-size: 1.05rem;
+      font-weight: 700;
       transition: all 0.2s ease;
     }
 
     .btn-secondary:hover {
       border-color: var(--orange-primary);
       color: var(--orange-primary);
-      transform: translateY(-1px);
+      transform: translateY(-2px);
       box-shadow: var(--card-shadow);
     }
 
     .btn-secondary svg {
-      width: 15px;
-      height: 15px;
+      width: 18px;
+      height: 18px;
       stroke: currentColor;
-      stroke-width: 2;
+      stroke-width: 2.2;
     }
 
     /* ==========================================================================
-       SECTION HEADERS & CARDS
+       SECTION HEADLINES (LARGER & MORE PROMINENT AS REQUESTED)
        ========================================================================== */
     .section-wrap {
-      margin-bottom: 3.5rem;
+      margin-bottom: 5rem;
     }
 
     .section-headline {
-      margin-bottom: 1.5rem;
+      margin-bottom: 2.25rem;
     }
 
+    /* Big, Bold Kicker Badge */
     .section-tag {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1rem;               /* Scaled up significantly */
+      font-weight: 850;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.12em;
       color: var(--orange-primary);
-      margin-bottom: 0.35rem;
+      background: var(--orange-light);
+      border: 1px solid var(--orange-border);
+      padding: 0.4rem 1rem;
+      border-radius: 8px;
+      margin-bottom: 0.75rem;
       font-family: ui-monospace, Menlo, Consolas, monospace;
     }
 
+    .section-tag::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--orange-vibrant);
+      display: inline-block;
+    }
+
+    /* Large Section Title */
     .section-title {
-      font-size: 1.5rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
+      font-size: clamp(2rem, 3.2vw, 2.75rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
       color: var(--text-main);
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.75rem;
+      line-height: 1.2;
+    }
+
+    .section-title svg {
+      width: 32px;
+      height: 32px;
     }
 
     .section-subtitle {
-      font-size: 0.9rem;
+      font-size: 1.15rem;
       color: var(--text-muted);
-      margin-top: 0.2rem;
+      margin-top: 0.45rem;
+      line-height: 1.5;
     }
 
-    /* Card Styling */
+    /* Common Card Styling */
     .card-block {
       background: var(--surface);
       border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
-      padding: 1.6rem;
-      margin-bottom: 1.25rem;
+      border-radius: var(--radius-xl);
+      padding: 2.25rem;
       box-shadow: var(--card-shadow);
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-      position: relative;
     }
 
     .card-block:hover {
       border-color: var(--border-hover);
       box-shadow: var(--card-hover-shadow);
-      transform: translateY(-2px);
     }
 
-    /* Tech Pills */
+    /* ==========================================================================
+       SECTION 1: COMPANY PROJECTS (MAQ SOFTWARE)
+       Wide 2-column Grid with Generous Proportions
+       ========================================================================== */
+    .company-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1.75rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px dashed var(--border-color);
+    }
+
+    @media (min-width: 640px) {
+      .company-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+      }
+    }
+
+    .company-name {
+      font-size: 1.75rem;
+      font-weight: 900;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .company-role {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--orange-primary);
+    }
+
+    .company-dates {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-weight: 650;
+      background: var(--surface-elevated);
+      padding: 0.3rem 0.8rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+    }
+
+    /* Sub-projects 2-column Grid */
+    .subprojects-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+    }
+
+    @media (min-width: 960px) {
+      .subprojects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .subproject-card {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.85rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+
+    .subproject-card:hover {
+      border-color: var(--orange-vibrant);
+      background: var(--surface);
+      transform: translateY(-3px);
+      box-shadow: var(--card-hover-shadow);
+    }
+
+    .subproject-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.6rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .subproject-title {
+      font-size: 1.45rem;
+      font-weight: 850;
+      color: var(--text-main);
+      letter-spacing: -0.01em;
+    }
+
+    .subproject-badge {
+      font-size: 0.775rem;
+      font-weight: 750;
+      text-transform: uppercase;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-sm);
+      background: var(--orange-light);
+      border: 1px solid var(--orange-border);
+      color: var(--orange-primary);
+    }
+
     .tech-tag-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.4rem;
-      margin: 0.75rem 0 0.9rem 0;
+      gap: 0.5rem;
+      margin: 0.85rem 0 1.25rem 0;
     }
 
     .tech-tag {
-      font-size: 0.75rem;
-      font-weight: 600;
-      padding: 0.2rem 0.55rem;
+      font-size: 0.825rem;
+      font-weight: 700;
+      padding: 0.28rem 0.7rem;
       background: var(--orange-light);
       border: 1px solid var(--orange-border);
       border-radius: var(--radius-sm);
@@ -486,20 +621,19 @@
       border-color: var(--orange-vibrant);
     }
 
-    /* Bullet Points */
     .bullet-list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 0.65rem;
     }
 
     .bullet-item {
-      font-size: 0.92rem;
+      font-size: 1rem;
       color: var(--text-body);
       position: relative;
-      padding-left: 1.25rem;
-      line-height: 1.55;
+      padding-left: 1.4rem;
+      line-height: 1.65;
     }
 
     .bullet-item::before {
@@ -508,104 +642,61 @@
       left: 0.1rem;
       top: -0.1rem;
       color: var(--orange-vibrant);
-      font-size: 1.25rem;
-      font-weight: 800;
+      font-size: 1.35rem;
+      font-weight: 900;
     }
 
     .bullet-item strong {
       color: var(--text-main);
-      font-weight: 600;
-    }
-
-    /* Company Card Specifics */
-    .company-header {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-      margin-bottom: 1.35rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px dashed var(--border-color);
-    }
-
-    @media (min-width: 600px) {
-      .company-header {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: baseline;
-      }
-    }
-
-    .company-name {
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: var(--text-main);
-    }
-
-    .company-role {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--orange-primary);
-    }
-
-    .company-dates {
-      font-size: 0.8125rem;
-      color: var(--text-muted);
-      font-family: ui-monospace, Menlo, Consolas, monospace;
-      font-weight: 500;
-    }
-
-    .subproject-box {
-      margin-bottom: 1.6rem;
-      padding-left: 1rem;
-      border-left: 2px solid var(--border-color);
-      transition: border-color 0.2s ease;
-    }
-
-    .subproject-box:last-child {
-      margin-bottom: 0;
-    }
-
-    .subproject-box:hover {
-      border-left-color: var(--orange-vibrant);
-    }
-
-    .subproject-title {
-      font-size: 1.1rem;
       font-weight: 700;
-      color: var(--text-main);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
     }
 
     /* ==========================================================================
-       PERSONAL PROJECTS
+       SECTION 2: PERSONAL PROJECTS
        ========================================================================== */
+    .featured-project-box {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (min-width: 960px) {
+      .featured-project-box {
+        grid-template-columns: 1.15fr 1fr;
+      }
+    }
+
+    .project-meta-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
     .project-top {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: baseline;
-      gap: 0.5rem;
-      margin-bottom: 0.5rem;
+      gap: 0.75rem;
+      margin-bottom: 0.85rem;
     }
 
     .project-title {
-      font-size: 1.3rem;
-      font-weight: 800;
+      font-size: 1.6rem;
+      font-weight: 900;
       color: var(--text-main);
     }
 
     .project-link-pill {
       display: inline-flex;
       align-items: center;
-      gap: 0.35rem;
-      font-size: 0.8rem;
-      font-weight: 600;
+      gap: 0.45rem;
+      font-size: 0.9rem;
+      font-weight: 700;
       color: var(--orange-primary);
       background: var(--orange-light);
       border: 1px solid var(--orange-border);
-      padding: 0.25rem 0.65rem;
+      padding: 0.4rem 0.95rem;
       border-radius: var(--radius-sm);
       transition: all 0.2s ease;
     }
@@ -617,31 +708,48 @@
     }
 
     .project-link-pill svg {
-      width: 14px;
-      height: 14px;
+      width: 16px;
+      height: 16px;
       stroke: currentColor;
-      stroke-width: 2;
+      stroke-width: 2.2;
     }
 
     .project-desc-text {
-      font-size: 0.95rem;
+      font-size: 1.1rem;
       color: var(--text-body);
-      margin-bottom: 0.75rem;
-      line-height: 1.5;
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+
+    .project-details-col {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+    }
+
+    .details-heading {
+      font-size: 0.925rem;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--orange-primary);
+      margin-bottom: 1rem;
+      font-family: ui-monospace, Menlo, Consolas, monospace;
     }
 
     /* ==========================================================================
-       ACHIEVEMENTS & CERTIFICATIONS
+       SECTION 3: ACHIEVEMENTS & CERTIFICATIONS
        ========================================================================== */
-    .metrics-row {
+    .metrics-grid-wide {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 0.85rem;
-      margin-bottom: 1.5rem;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
     }
 
-    @media (min-width: 600px) {
-      .metrics-row {
+    @media (min-width: 768px) {
+      .metrics-grid-wide {
         grid-template-columns: repeat(3, 1fr);
       }
     }
@@ -649,27 +757,27 @@
     .metric-card {
       background: var(--surface);
       border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      padding: 1.15rem;
+      border-top: 5px solid var(--orange-vibrant);
+      border-radius: var(--radius-lg);
+      padding: 1.85rem;
       text-align: left;
       box-shadow: var(--card-shadow);
-      transition: all 0.2s ease;
-      border-top: 3px solid var(--orange-vibrant);
+      transition: all 0.25s ease;
     }
 
     .metric-card:hover {
       border-color: var(--border-hover);
-      transform: translateY(-2px);
+      transform: translateY(-4px);
       box-shadow: var(--card-hover-shadow);
     }
 
     .metric-number {
-      font-size: 1.6rem;
-      font-weight: 800;
+      font-size: clamp(2.2rem, 3.5vw, 3rem);
+      font-weight: 900;
       color: var(--text-main);
-      letter-spacing: -0.03em;
+      letter-spacing: -0.035em;
       line-height: 1.1;
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.65rem;
     }
 
     .metric-number .accent {
@@ -677,101 +785,142 @@
     }
 
     .metric-label {
-      font-size: 0.825rem;
+      font-size: 0.975rem;
       color: var(--text-muted);
-      line-height: 1.4;
+      line-height: 1.6;
+    }
+
+    /* Certifications Grid */
+    .certs-grid-wide {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    @media (min-width: 960px) {
+      .certs-grid-wide {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
 
     .cert-item {
       display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      padding: 0.85rem 1rem;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.1rem;
+      padding: 1.65rem;
       background: var(--surface);
       border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      margin-bottom: 0.65rem;
+      border-radius: var(--radius-lg);
       box-shadow: var(--card-shadow);
       transition: all 0.2s ease;
     }
 
     .cert-item:hover {
       border-color: var(--orange-primary);
-      transform: translateX(2px);
-    }
-
-    .cert-icon {
-      color: var(--orange-vibrant);
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
-    .cert-icon svg {
-      width: 18px;
-      height: 18px;
-      stroke: currentColor;
-      stroke-width: 2.2;
-    }
-
-    .cert-text {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--text-main);
-    }
-
-    /* ==========================================================================
-       SOCIALS & CONTACT
-       ========================================================================== */
-    .socials-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 0.75rem;
-    }
-
-    @media (min-width: 550px) {
-      .socials-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    .contact-card {
-      display: flex;
-      align-items: center;
-      gap: 0.85rem;
-      padding: 1rem 1.15rem;
-      background: var(--surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      color: var(--text-main);
-      box-shadow: var(--card-shadow);
-      transition: all 0.2s ease;
-      position: relative;
-    }
-
-    .contact-card:hover {
-      border-color: var(--orange-vibrant);
-      color: var(--orange-primary);
-      transform: translateY(-2px);
+      transform: translateY(-3px);
       box-shadow: var(--card-hover-shadow);
     }
 
-    .contact-icon-box {
-      width: 38px;
-      height: 38px;
+    .cert-top-icon {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .cert-icon-badge {
+      width: 40px;
+      height: 40px;
       border-radius: var(--radius-sm);
       background: var(--orange-light);
       color: var(--orange-vibrant);
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 1.3rem;
+    }
+
+    .cert-tag {
+      font-size: 0.775rem;
+      font-weight: 800;
+      color: var(--orange-primary);
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      letter-spacing: 0.05em;
+    }
+
+    .cert-text {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       SECTION 4: SOCIALS & CONTACT
+       ========================================================================== */
+    .socials-grid-wide {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    @media (min-width: 580px) and (max-width: 959px) {
+      .socials-grid-wide {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 960px) {
+      .socials-grid-wide {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .contact-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.25rem;
+      padding: 1.65rem;
+      background: var(--surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      color: var(--text-main);
+      box-shadow: var(--card-shadow);
+      transition: all 0.25s ease;
+      position: relative;
+    }
+
+    .contact-card:hover {
+      border-color: var(--orange-vibrant);
+      color: var(--orange-primary);
+      transform: translateY(-4px);
+      box-shadow: var(--card-hover-shadow);
+    }
+
+    .contact-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .contact-icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-sm);
+      background: var(--orange-light);
+      color: var(--orange-vibrant);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.45rem;
       flex-shrink: 0;
     }
 
-    .contact-icon-box svg {
-      width: 18px;
-      height: 18px;
-      stroke: currentColor;
-      stroke-width: 2;
+    .contact-action-hint {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--orange-primary);
     }
 
     .contact-info {
@@ -781,16 +930,17 @@
     }
 
     .contact-type {
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       text-transform: uppercase;
-      font-weight: 700;
-      letter-spacing: 0.05em;
+      font-weight: 800;
+      letter-spacing: 0.08em;
       color: var(--text-muted);
+      margin-bottom: 0.25rem;
     }
 
     .contact-val {
-      font-size: 0.875rem;
-      font-weight: 600;
+      font-size: 1rem;
+      font-weight: 700;
       color: var(--text-main);
       text-overflow: ellipsis;
       overflow: hidden;
@@ -799,18 +949,19 @@
 
     .copy-bubble {
       position: absolute;
-      top: -28px;
-      right: 12px;
+      top: -32px;
+      right: 16px;
       background: var(--text-main);
       color: var(--bg-base);
-      font-size: 0.75rem;
-      font-weight: 600;
-      padding: 0.2rem 0.55rem;
-      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.28rem 0.7rem;
+      border-radius: 6px;
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.2s ease, transform 0.2s ease;
       z-index: 50;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
     .copy-bubble.show {
@@ -822,19 +973,19 @@
        FOOTER
        ========================================================================== */
     footer {
-      margin-top: 3.5rem;
-      padding-top: 1.5rem;
+      margin-top: 5rem;
+      padding-top: 2.25rem;
       border-top: 1px solid var(--border-subtle);
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.5rem;
-      font-size: 0.8125rem;
+      gap: 1rem;
+      font-size: 0.925rem;
       color: var(--text-muted);
       text-align: center;
     }
 
-    @media (min-width: 600px) {
+    @media (min-width: 640px) {
       footer {
         flex-direction: row;
         justify-content: space-between;
@@ -844,14 +995,19 @@
     .api-pill {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.5rem;
       font-family: ui-monospace, Menlo, Consolas, monospace;
-      font-size: 0.75rem;
+      font-size: 0.825rem;
+      background: var(--orange-light);
+      padding: 0.35rem 0.95rem;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--orange-border);
+      font-weight: 650;
     }
 
     .api-dot {
-      width: 7px;
-      height: 7px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background: var(--orange-vibrant);
     }
@@ -875,9 +1031,12 @@
         box-shadow: none !important;
         break-inside: avoid;
       }
+      .subprojects-grid, .certs-grid-wide, .socials-grid-wide {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
       .avatar-circle {
-        width: 90px !important;
-        height: 90px !important;
+        width: 110px !important;
+        height: 110px !important;
       }
     }
   </style>
@@ -910,13 +1069,13 @@
   <main class="container">
 
     <!-- ==========================================================================
-         HERO SECTION: CENTERED IMAGE, COMPANY, COLLEGE & BIO
+         HERO SECTION: BIG CENTERED IMAGE, NAME, COMPANY, COLLEGE & BIO
          ========================================================================== -->
     <section class="hero-center" id="home">
-      <!-- Centered Circular Image -->
+      <!-- Centered Circular Image (Scaled up) -->
       <div class="avatar-circle-wrapper">
         <img src="./profile.jpg" alt="Ayush Thakur" class="avatar-circle" id="hero-avatar"
-             onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'140\' height=\'140\' viewBox=\'0 0 140 140\'><rect width=\'140\' height=\'140\' fill=\'%23EA580C\'/><text x=\'50%25\' y=\'55%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23ffffff\' font-family=\'sans-serif\' font-size=\'48\' font-weight=\'bold\'>AT</text></svg>';">
+             onError="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'180\' height=\'180\' viewBox=\'0 0 180 180\'><rect width=\'180\' height=\'180\' fill=\'%23EA580C\'/><text x=\'50%25\' y=\'55%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23ffffff\' font-family=\'sans-serif\' font-size=\'60\' font-weight=\'bold\'>AT</text></svg>';">
         <div class="avatar-halo-badge" title="Active">
           <span></span>
         </div>
@@ -925,7 +1084,7 @@
       <h1 class="hero-name" id="hero-name">Ayush Thakur</h1>
       <div class="hero-title" id="hero-title">Associate Software Engineer</div>
 
-      <!-- Current Company & College Prominent Badges -->
+      <!-- Current Company & College Badges -->
       <div class="affiliation-row">
         <div class="affiliation-badge">
           <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
@@ -941,7 +1100,7 @@
       <!-- Brief Description About Me -->
       <p class="hero-bio" id="hero-bio">
         Associate Software Engineer at <strong>MAQ Software</strong> specializing in <strong>distributed data pipelines</strong>, 
-        enterprise migration platforms, and scalable backend architectures. Experienced in processing <strong>10M+ records</strong> with fault-tolerant retry strategies, automating Tableau-to-Power BI conversions for <strong>1,000+ reports</strong>, and engineering robust APIs using <strong>Python, C#, Java Spring Boot, and AI agent frameworks</strong>.
+        enterprise migration platforms, and scalable backend architectures. Experienced in processing <strong>10M+ records</strong> with fault-tolerant retry workflows, automating Tableau-to-Power BI conversions for <strong>1,000+ reports</strong>, and engineering robust APIs using <strong>Python, C#, Java Spring Boot, and AI agent frameworks</strong>.
       </p>
 
       <!-- Action Buttons -->
@@ -952,22 +1111,26 @@
         </a>
         <a href="#socials" class="btn-secondary">
           <svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-          <span>Get In Touch</span>
+          <span>Contact &amp; Socials</span>
         </a>
+        <button onclick="window.print()" class="btn-secondary" title="View & print / download clean PDF resume">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          <span>View Resume</span>
+        </button>
       </div>
     </section>
 
     <!-- ==========================================================================
-         SECTION 1: COMPANY PROJECTS (MAQ Software)
+         SECTION 1: COMPANY PROJECTS (MAQ SOFTWARE)
          ========================================================================== -->
     <section class="section-wrap" id="company-projects">
       <div class="section-headline">
         <span class="section-tag">MAQ SOFTWARE · PRODUCTION</span>
         <h2 class="section-title">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" color="var(--orange-vibrant)"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" color="var(--orange-vibrant)"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
           Company Projects
         </h2>
-        <p class="section-subtitle">Production engineering, distributed pipelines, and licensing architecture</p>
+        <p class="section-subtitle">High-throughput migration engines and enterprise licensing systems built in production</p>
       </div>
 
       <div class="card-block">
@@ -979,49 +1142,58 @@
           <div class="company-dates">Oct 2025 – Present</div>
         </div>
 
-        <!-- Sub-project 1: MigrateFAST -->
-        <div class="subproject-box">
-          <div class="subproject-title">
-            <span>MigrateFAST</span>
+        <!-- 2 Balanced Columns on Laptop / Desktop -->
+        <div class="subprojects-grid">
+          <!-- Sub-project 1: MigrateFAST -->
+          <div class="subproject-card">
+            <div>
+              <div class="subproject-header">
+                <h3 class="subproject-title">MigrateFAST</h3>
+                <span class="subproject-badge">Enterprise Platform</span>
+              </div>
+
+              <div class="tech-tag-row">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Flask</span>
+                <span class="tech-tag">LangGraph</span>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Azure</span>
+                <span class="tech-tag">Tableau</span>
+                <span class="tech-tag">Power BI</span>
+              </div>
+
+              <ul class="bullet-list">
+                <li class="bullet-item">Developed internal migration platform supporting <strong>1,000+ report migrations</strong>.</li>
+                <li class="bullet-item">Built distributed data-processing pipelines handling <strong>10M+ records</strong> with optimized retry workflows <strong>(+35% reliability)</strong>.</li>
+                <li class="bullet-item">Architected microservice-oriented backend components for high availability.</li>
+                <li class="bullet-item">Automated E2E and regression suites using Playwright.</li>
+                <li class="bullet-item">Integrated telemetry and monitoring with Azure Application Insights.</li>
+              </ul>
+            </div>
           </div>
 
-          <div class="tech-tag-row">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Flask</span>
-            <span class="tech-tag">LangGraph</span>
-            <span class="tech-tag">React</span>
-            <span class="tech-tag">Azure</span>
-            <span class="tech-tag">Tableau</span>
-            <span class="tech-tag">Power BI</span>
+          <!-- Sub-project 2: SaaS Tools License Manager -->
+          <div class="subproject-card">
+            <div>
+              <div class="subproject-header">
+                <h3 class="subproject-title">SaaS Tools License Manager</h3>
+                <span class="subproject-badge">Licensing Microservice</span>
+              </div>
+
+              <div class="tech-tag-row">
+                <span class="tech-tag">C#</span>
+                <span class="tech-tag">ASP.NET Core</span>
+                <span class="tech-tag">SQL</span>
+                <span class="tech-tag">TypeScript</span>
+              </div>
+
+              <ul class="bullet-list">
+                <li class="bullet-item">Built secure REST APIs for licensing with rate limiting and authentication across <strong>10+ endpoints</strong>.</li>
+                <li class="bullet-item">Implemented server-clock SQL license validation across <strong>100% of activation checks</strong>.</li>
+                <li class="bullet-item">Conducted load and performance stress testing to guarantee low-latency validation under peak load.</li>
+              </ul>
+            </div>
           </div>
-
-          <ul class="bullet-list">
-            <li class="bullet-item">Developed internal migration platform supporting <strong>1,000+ report migrations</strong>.</li>
-            <li class="bullet-item">Built distributed data-processing pipelines handling <strong>10M+ records</strong> with optimized retry workflows <strong>(+35% reliability)</strong>.</li>
-            <li class="bullet-item">Architected microservice-oriented backend components for high availability.</li>
-            <li class="bullet-item">Automated E2E and regression suites using Playwright.</li>
-            <li class="bullet-item">Integrated telemetry and monitoring with Azure Application Insights.</li>
-          </ul>
-        </div>
-
-        <!-- Sub-project 2: SaaS Tools License Manager -->
-        <div class="subproject-box">
-          <div class="subproject-title">
-            <span>SaaS Tools License Manager</span>
-          </div>
-
-          <div class="tech-tag-row">
-            <span class="tech-tag">C#</span>
-            <span class="tech-tag">ASP.NET Core</span>
-            <span class="tech-tag">SQL</span>
-            <span class="tech-tag">TypeScript</span>
-          </div>
-
-          <ul class="bullet-list">
-            <li class="bullet-item">Built secure REST APIs for licensing with rate limiting and authentication across <strong>10+ endpoints</strong>.</li>
-            <li class="bullet-item">Implemented server-clock SQL license validation across <strong>100% of activation checks</strong>.</li>
-            <li class="bullet-item">Conducted load and performance stress testing to guarantee low-latency validation under load.</li>
-          </ul>
         </div>
       </div>
     </section>
@@ -1033,40 +1205,51 @@
       <div class="section-headline">
         <span class="section-tag">OPEN SOURCE &amp; FULL STACK</span>
         <h2 class="section-title">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" color="var(--orange-vibrant)"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" color="var(--orange-vibrant)"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
           Personal Projects
         </h2>
         <p class="section-subtitle">Architected systems, microservices, and platforms</p>
       </div>
 
-      <!-- MyShop -->
+      <!-- MyShop Card with Laptop Two-Column Interior Split -->
       <div class="card-block">
-        <div class="project-top">
-          <h3 class="project-title">MyShop</h3>
-          <a href="https://github.com/Ayush1thakur" target="_blank" rel="noopener noreferrer" class="project-link-pill">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-            <span>GitHub Repository</span>
-          </a>
+        <div class="featured-project-box">
+          <!-- Left Column: Title, Overview, Tech Stack & Repo Button -->
+          <div class="project-meta-col">
+            <div>
+              <div class="project-top">
+                <h3 class="project-title">MyShop</h3>
+                <a href="https://github.com/Ayush1thakur" target="_blank" rel="noopener noreferrer" class="project-link-pill">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  <span>GitHub Repository</span>
+                </a>
+              </div>
+
+              <p class="project-desc-text">
+                High-performance E-commerce backend platform for user authentication, catalog management, shopping cart operations, and transactional order fulfillment.
+              </p>
+
+              <div class="tech-tag-row">
+                <span class="tech-tag">Java</span>
+                <span class="tech-tag">Spring Boot</span>
+                <span class="tech-tag">Spring Data JPA</span>
+                <span class="tech-tag">Hibernate</span>
+                <span class="tech-tag">SQL</span>
+                <span class="tech-tag">Spring Security</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Engineering Highlights -->
+          <div class="project-details-col">
+            <div class="details-heading">Key Implementation Highlights</div>
+            <ul class="bullet-list">
+              <li class="bullet-item">Architected core microservice controllers and services for user, catalog, cart, and order processing.</li>
+              <li class="bullet-item">Optimized database queries and transactional consistency using JPA / Hibernate.</li>
+              <li class="bullet-item">Secured role-based access control (RBAC) and token authentication with Spring Security.</li>
+            </ul>
+          </div>
         </div>
-
-        <p class="project-desc-text">
-          High-performance E-commerce backend platform for user authentication, catalog management, shopping cart operations, and transactional order fulfillment.
-        </p>
-
-        <div class="tech-tag-row">
-          <span class="tech-tag">Java</span>
-          <span class="tech-tag">Spring Boot</span>
-          <span class="tech-tag">Spring Data JPA</span>
-          <span class="tech-tag">Hibernate</span>
-          <span class="tech-tag">SQL</span>
-          <span class="tech-tag">Spring Security</span>
-        </div>
-
-        <ul class="bullet-list">
-          <li class="bullet-item">Architected core microservice controllers and services for user, catalog, cart, and order processing.</li>
-          <li class="bullet-item">Optimized database queries and transactional consistency using JPA / Hibernate.</li>
-          <li class="bullet-item">Secured role-based access control (RBAC) and token authentication with Spring Security.</li>
-        </ul>
       </div>
     </section>
 
@@ -1077,14 +1260,14 @@
       <div class="section-headline">
         <span class="section-tag">MILESTONES &amp; CREDENTIALS</span>
         <h2 class="section-title">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" color="var(--orange-vibrant)"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" color="var(--orange-vibrant)"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
           Achievements &amp; Certifications
         </h2>
         <p class="section-subtitle">Quantified engineering impact and professional certifications</p>
       </div>
 
-      <!-- 3 Key Metric Pods -->
-      <div class="metrics-row">
+      <!-- 3 Key Metric Pods Across Wide Layout -->
+      <div class="metrics-grid-wide">
         <div class="metric-card">
           <div class="metric-number">10M<span class="accent">+</span></div>
           <div class="metric-label">Records processed through fault-tolerant data pipelines (+35% reliability gain) at MAQ Software.</div>
@@ -1101,26 +1284,31 @@
         </div>
       </div>
 
-      <!-- Certifications -->
-      <div class="cert-item">
-        <div class="cert-icon">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+      <!-- 3 Certifications Side-by-Side -->
+      <div class="certs-grid-wide">
+        <div class="cert-item">
+          <div class="cert-top-icon">
+            <div class="cert-icon-badge">☁️</div>
+            <span class="cert-tag">MICROSOFT AZURE</span>
+          </div>
+          <div class="cert-text">Azure Fundamentals (AZ-900) &amp; Cloud Infrastructure Architecture</div>
         </div>
-        <div class="cert-text">Microsoft Certified: Azure Fundamentals (AZ-900) &amp; Cloud Infrastructure Architecture</div>
-      </div>
 
-      <div class="cert-item">
-        <div class="cert-icon">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+        <div class="cert-item">
+          <div class="cert-top-icon">
+            <div class="cert-icon-badge">🤖</div>
+            <span class="cert-tag">GENERATIVE AI</span>
+          </div>
+          <div class="cert-text">AI Engineering: LangChain, LangGraph, RAG Systems &amp; FastMCP</div>
         </div>
-        <div class="cert-text">Generative AI Engineering: LangChain, LangGraph, RAG Systems &amp; FastMCP</div>
-      </div>
 
-      <div class="cert-item">
-        <div class="cert-icon">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+        <div class="cert-item">
+          <div class="cert-top-icon">
+            <div class="cert-icon-badge">☕</div>
+            <span class="cert-tag">BACKEND SYSTEMS</span>
+          </div>
+          <div class="cert-text">Enterprise Java Spring Boot, Microservices &amp; Spring Data JPA Performance</div>
         </div>
-        <div class="cert-text">Enterprise Java Spring Boot, Microservices &amp; Spring Data JPA Performance</div>
       </div>
     </section>
 
@@ -1131,20 +1319,22 @@
       <div class="section-headline">
         <span class="section-tag">CONNECT &amp; REACH OUT</span>
         <h2 class="section-title">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" color="var(--orange-vibrant)"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" color="var(--orange-vibrant)"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
           Socials &amp; Contact
         </h2>
         <p class="section-subtitle">Let's discuss opportunities, distributed systems, or software engineering</p>
       </div>
 
-      <div class="socials-grid">
+      <!-- 4 Columns Across Wide Layout -->
+      <div class="socials-grid-wide">
         <!-- Email -->
         <a href="mailto:ayush.thaku7@gmail.com" class="contact-card" id="email-card" title="Click to copy email">
-          <div class="contact-icon-box">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          <div class="contact-card-top">
+            <div class="contact-icon-box">✉️</div>
+            <span class="contact-action-hint">Copy 📋</span>
           </div>
           <div class="contact-info">
-            <span class="contact-type">Email (Click to copy)</span>
+            <span class="contact-type">Email</span>
             <span class="contact-val">ayush.thaku7@gmail.com</span>
           </div>
           <span class="copy-bubble" id="email-bubble">Copied!</span>
@@ -1152,11 +1342,12 @@
 
         <!-- Phone -->
         <a href="tel:+919877247382" class="contact-card" id="phone-card" title="Click to copy phone">
-          <div class="contact-icon-box">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <div class="contact-card-top">
+            <div class="contact-icon-box">📞</div>
+            <span class="contact-action-hint">Call / Copy 📋</span>
           </div>
           <div class="contact-info">
-            <span class="contact-type">Phone (Click to copy)</span>
+            <span class="contact-type">Phone</span>
             <span class="contact-val">+91-9877247382</span>
           </div>
           <span class="copy-bubble" id="phone-bubble">Copied!</span>
@@ -1164,8 +1355,9 @@
 
         <!-- LinkedIn -->
         <a href="https://linkedin.com/in/ayush-thakur1" target="_blank" rel="noopener noreferrer" class="contact-card">
-          <div class="contact-icon-box">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          <div class="contact-card-top">
+            <div class="contact-icon-box">💼</div>
+            <span class="contact-action-hint">Connect ↗</span>
           </div>
           <div class="contact-info">
             <span class="contact-type">LinkedIn</span>
@@ -1175,8 +1367,9 @@
 
         <!-- GitHub -->
         <a href="https://github.com/Ayush1thakur" target="_blank" rel="noopener noreferrer" class="contact-card">
-          <div class="contact-icon-box">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          <div class="contact-card-top">
+            <div class="contact-icon-box">🐙</div>
+            <span class="contact-action-hint">Follow ↗</span>
           </div>
           <div class="contact-info">
             <span class="contact-type">GitHub</span>
