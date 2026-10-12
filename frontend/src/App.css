@@ -1,5 +1,25 @@
-/* White & Orange Aesthetic Minimal Styling for React App (Completely Wide & Scaled) */
-:root {
+/* Dark Mode by Default with White & Warm Orange Palette */
+:root,
+[data-theme="dark"],
+.theme-dark,
+.portfolio-page.theme-dark {
+  --app-bg: #0C0A09;
+  --app-card: #181614;
+  --app-card-elevated: #201C19;
+  --app-border: #38332E;
+  --app-border-hover: #EA580C;
+  --app-text: #FAFAF9;
+  --app-text-muted: #A8A29E;
+  --app-orange: #FB923C;
+  --app-orange-vibrant: #F97316;
+  --app-orange-light: rgba(249, 115, 22, 0.14);
+  --app-orange-border: rgba(249, 115, 22, 0.3);
+  --app-orange-glow: rgba(251, 146, 60, 0.35);
+}
+
+[data-theme="light"],
+.theme-light,
+.portfolio-page.theme-light {
   --app-bg: #FFFFFF;
   --app-card: #FFFFFF;
   --app-card-elevated: #FFFBF7;
@@ -14,20 +34,49 @@
   --app-orange-glow: rgba(249, 115, 22, 0.24);
 }
 
-[data-theme="dark"] {
-  --app-bg: #0C0A09;
-  --app-card: #181614;
-  --app-card-elevated: #201C19;
-  --app-border: #38332E;
-  --app-border-hover: #EA580C;
-  --app-text: #FAFAF9;
-  --app-text-muted: #A8A29E;
-  --app-orange: #FB923C;
-  --app-orange-vibrant: #F97316;
-  --app-orange-light: rgba(249, 115, 22, 0.14);
-  --app-orange-border: rgba(249, 115, 22, 0.3);
-  --app-orange-glow: rgba(251, 146, 60, 0.35);
+/* MAQ Software Logo Styles */
+.company-brand-flex {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
 }
+
+.maq-logo-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  padding: 0.45rem 0.95rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.maq-logo-badge:hover {
+  transform: scale(1.03);
+}
+
+.maq-logo-badge.mini {
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  margin-right: 0.45rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  vertical-align: middle;
+}
+
+.maq-company-logo {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.maq-company-logo.mini {
+  height: 16px;
+}
+
 
 .portfolio-page {
   background-color: var(--app-bg);

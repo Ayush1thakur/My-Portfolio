@@ -16,7 +16,20 @@ export default function App() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [copiedField, setCopiedField] = useState(null);
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('portfolio_theme_mode') || 'dark';
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(nextTheme);
+    localStorage.setItem('portfolio_theme_mode', nextTheme);
+    document.documentElement.setAttribute('data-theme', nextTheme);
+  };
 
   // Navigation & Page State ('portfolio' or 'admin')
   const [currentPage, setCurrentPage] = useState(() => {
@@ -149,12 +162,6 @@ export default function App() {
       setCopiedField(fieldName);
       setTimeout(() => setCopiedField(null), 1800);
     }
-  };
-
-  const toggleTheme = () => {
-    const nextTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(nextTheme);
-    document.documentElement.setAttribute('data-theme', nextTheme);
   };
 
   // Auth: Login
@@ -671,7 +678,12 @@ export default function App() {
                   {/* TAB 3: COMPANY SUB-PROJECTS CRUD */}
                   {adminTab === 'company' && (
                     <div className="admin-form-pane">
-                      <h4 className="pane-title">Add Company Project (under MAQ Software)</h4>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', marginBottom: '1.25rem' }}>
+                        <span className="maq-logo-badge mini">
+                          <img src="/maq-logo.png" alt="MAQ Software Logo" className="maq-company-logo mini" />
+                        </span>
+                        <h4 className="pane-title" style={{ margin: 0 }}>Add Company Project (under MAQ Software)</h4>
+                      </div>
                       <form onSubmit={handleAddSubProject} className="sub-form">
                         <div className="form-grid-2">
                           <div className="form-group">
@@ -822,7 +834,10 @@ export default function App() {
           {/* Current Company & College Badges */}
           <div className="affiliation-group">
             <div className="affiliation-chip">
-              🏢 Current Company: <strong>{personal.currentCompany || 'MAQ Software'}</strong> (Noida)
+              <span className="maq-logo-badge mini">
+                <img src="/maq-logo.png" alt="MAQ Software Logo" className="maq-company-logo mini" />
+              </span>
+              <span>Company: <strong>{personal.currentCompany || 'MAQ Software'}</strong> (Noida)</span>
             </div>
             <div className="affiliation-chip">
               🎓 College: <strong>{personal.college || 'Chitkara University'}</strong> (CGPA: 8.41)
@@ -865,9 +880,14 @@ export default function App() {
 
           <div className="card">
             <div className="company-title-row">
-              <div>
-                <h3 className="company-brand">MAQ Software</h3>
-                <div className="company-subtitle">Associate Software Engineer · Noida, India</div>
+              <div className="company-brand-flex">
+                <div className="maq-logo-badge">
+                  <img src="/maq-logo.png" alt="MAQ Software Logo" className="maq-company-logo" />
+                </div>
+                <div>
+                  <h3 className="company-brand">MAQ Software</h3>
+                  <div className="company-subtitle">Associate Software Engineer · Noida, India</div>
+                </div>
               </div>
               <span className="mono-date">Oct 2025 – Present</span>
             </div>

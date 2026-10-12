@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +9,43 @@
 
   <style>
     /* ==========================================================================
-       WHITE & ORANGE AESTHETIC DESIGN SYSTEM (Completely Wide, Scaled & High-Signal)
+       DARK & ORANGE AESTHETIC DESIGN SYSTEM (Default Dark Mode, Completely Wide)
        ========================================================================== */
-    :root {
+    :root,
+    [data-theme="dark"] {
+      /* Dark Mode Palette Default */
+      --bg-base: #0C0A09;
+      --bg-subtle: #141210;
+      --surface: #181614;
+      --surface-elevated: #201C19;
+      --border-subtle: #292524;
+      --border-color: #38332E;
+      --border-hover: #EA580C;
+
+      --text-main: #FAFAF9;
+      --text-body: #E7E5E4;
+      --text-muted: #A8A29E;
+      --text-subtle: #78716C;
+
+      --orange-primary: #FB923C;
+      --orange-vibrant: #F97316;
+      --orange-hover: #FED7AA;
+      --orange-light: rgba(249, 115, 22, 0.14);
+      --orange-border: rgba(249, 115, 22, 0.3);
+      --orange-glow: rgba(251, 146, 60, 0.35);
+
+      --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      --card-hover-shadow: 0 20px 42px -10px rgba(234, 88, 12, 0.2), 0 6px 16px -3px rgba(0, 0, 0, 0.4);
+      --glass-nav: rgba(12, 10, 9, 0.95);
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 18px;
+      --radius-xl: 24px;
+      --radius-full: 9999px;
+    }
+
+    [data-theme="light"] {
       /* Light Mode Palette */
       --bg-base: #FFFFFF;
       --bg-subtle: #FAF9F6;
@@ -21,30 +55,66 @@
       --border-color: #E7E3DC;
       --border-hover: #FDBA74;
 
-      --text-main: #1C1917;       /* Deep Charcoal */
-      --text-body: #44403C;       /* Warm Gray Body */
-      --text-muted: #78716C;      /* Muted Subtitles */
-      --text-subtle: #A8A29E;     /* Captions & Tags */
+      --text-main: #1C1917;
+      --text-body: #44403C;
+      --text-muted: #78716C;
+      --text-subtle: #A8A29E;
 
-      --orange-primary: #EA580C;  /* Sunset Orange */
-      --orange-vibrant: #F97316;  /* Vivid Tangerine */
+      --orange-primary: #EA580C;
+      --orange-vibrant: #F97316;
       --orange-hover: #C2410C;
-      --orange-light: #FFF7ED;    /* Soft Tint Background */
-      --orange-border: #FFEDD5;   /* Soft Pill Border */
+      --orange-light: #FFF7ED;
+      --orange-border: #FFEDD5;
       --orange-glow: rgba(249, 115, 22, 0.24);
 
       --card-shadow: 0 2px 5px rgba(0, 0, 0, 0.04), 0 3px 8px -2px rgba(234, 88, 12, 0.03);
       --card-hover-shadow: 0 20px 42px -10px rgba(234, 88, 12, 0.16), 0 6px 16px -3px rgba(0, 0, 0, 0.04);
       --glass-nav: rgba(255, 255, 255, 0.95);
-
-      --radius-sm: 8px;
-      --radius-md: 14px;
-      --radius-lg: 18px;
-      --radius-xl: 24px;
-      --radius-full: 9999px;
     }
 
-    [data-theme="dark"] {
+    /* MAQ Software Logo Styles */
+    .company-brand-flex {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .maq-logo-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      padding: 0.45rem 0.95rem;
+      border-radius: var(--radius-md);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+    }
+
+    .maq-logo-badge:hover {
+      transform: scale(1.03);
+    }
+
+    .maq-logo-badge.mini {
+      padding: 0.2rem 0.5rem;
+      border-radius: var(--radius-sm);
+      margin-right: 0.45rem;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+      vertical-align: middle;
+    }
+
+    .maq-company-logo {
+      height: 28px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .maq-company-logo.mini {
+      height: 16px;
+    }
+
       /* Dark Mode Palette */
       --bg-base: #0C0A09;
       --bg-subtle: #141210;
@@ -1301,9 +1371,9 @@
       </div>
 
       <div class="top-actions">
-        <button id="admin-portal-btn" class="admin-portal-btn" title="Admin Portal (Login / Manage)">
-          🔐 <span id="admin-btn-label">Admin Login</span>
-        </button>
+        <a href="admin.html" class="admin-portal-btn" title="Admin Control Center (Dedicated Page)">
+          🔐 <span>Admin Portal</span>
+        </a>
 
         <button id="theme-toggle" class="icon-btn" aria-label="Toggle dark/light theme" title="Toggle theme">
           <svg id="theme-icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
@@ -1316,171 +1386,6 @@
       </div>
     </div>
   </nav>
-
-  <div id="admin-toast-banner" class="admin-toast-banner">✓ Profile updated successfully</div>
-
-  <!-- ADMIN PORTAL MODAL -->
-  <div id="admin-modal-backdrop" class="admin-modal-backdrop" style="display:none;">
-    <div class="admin-modal-card">
-      <div class="admin-modal-header">
-        <div class="admin-header-title">
-          <span class="admin-badge">ROLE_ADMIN</span>
-          <h3 id="admin-modal-title">Administrator Authentication</h3>
-        </div>
-        <button id="admin-modal-close" class="close-modal-btn" title="Close">✕</button>
-      </div>
-
-      <!-- Login View -->
-      <div id="admin-login-view" class="admin-body">
-        <p style="color:var(--text-muted); margin-bottom:1.25rem;">
-          Sign in with administrator credentials to manage projects, update phone number, or change resume URL.
-        </p>
-        <div id="admin-login-error" class="login-error-alert"></div>
-        <form id="admin-login-form">
-          <div class="form-group">
-            <label>Username ID</label>
-            <input type="text" id="admin-input-user" required placeholder="Ayush" value="Ayush">
-          </div>
-          <div class="form-group">
-            <label>Password</label>
-            <input type="password" id="admin-input-pass" required placeholder="Ayush.admin" value="Ayush.admin">
-          </div>
-          <button type="submit" class="btn-orange" style="width:100%; justify-content:center; padding:0.85rem; margin-top:0.5rem;">
-            Authenticate &amp; Open Dashboard →
-          </button>
-        </form>
-        <div style="margin-top:1.25rem; font-size:0.85rem; color:var(--text-muted); text-align:center;">
-          Required ID: <strong>Ayush</strong> | Password: <strong>Ayush.admin</strong>
-        </div>
-      </div>
-
-      <!-- Dashboard View (When Logged In) -->
-      <div id="admin-dashboard-view" class="admin-body" style="display:none;">
-        <div class="admin-tabs">
-          <button class="tab-btn active" data-tab="tab-profile">👤 Profile &amp; Contact</button>
-          <button class="tab-btn" data-tab="tab-projects">🚀 Personal Projects</button>
-          <button class="tab-btn" data-tab="tab-company">🏢 Company Projects</button>
-          <button class="tab-btn" data-tab="tab-certs">🏆 Certifications</button>
-          <button id="admin-logout-btn" class="tab-btn logout-tab">🚪 Logout</button>
-        </div>
-
-        <!-- Tab 1: Profile & Contact -->
-        <div id="tab-profile" class="tab-pane">
-          <form id="admin-profile-form">
-            <div class="form-grid-2">
-              <div class="form-group">
-                <label>Full Name</label>
-                <input type="text" id="prof-name" value="Ayush Thakur">
-              </div>
-              <div class="form-group">
-                <label>Professional Title</label>
-                <input type="text" id="prof-title" value="Associate Software Engineer">
-              </div>
-              <div class="form-group">
-                <label>Current Company</label>
-                <input type="text" id="prof-company" value="MAQ Software">
-              </div>
-              <div class="form-group">
-                <label>College / Alma Mater</label>
-                <input type="text" id="prof-college" value="Chitkara University">
-              </div>
-              <div class="form-group">
-                <label>Phone Number (Directly Editable)</label>
-                <input type="text" id="prof-phone" value="+91-9877247382">
-              </div>
-              <div class="form-group">
-                <label>Email Address</label>
-                <input type="email" id="prof-email" value="ayush.thaku7@gmail.com">
-              </div>
-              <div class="form-group">
-                <label>Location</label>
-                <input type="text" id="prof-location" value="Noida, India">
-              </div>
-              <div class="form-group">
-                <label>Resume Link / File URL (Directly Editable)</label>
-                <input type="text" id="prof-resume" value="https://drive.google.com/file/d/ayush-resume/view">
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Bio Summary</label>
-              <textarea id="prof-summary" rows="3">Associate Software Engineer at MAQ Software specializing in high-throughput enterprise pipelines and cloud systems.</textarea>
-            </div>
-            <button type="submit" class="btn-orange" style="margin-top:0.5rem;">
-              💾 Save Profile Changes to Database
-            </button>
-          </form>
-        </div>
-
-        <!-- Tab 2: Personal Projects -->
-        <div id="tab-projects" class="tab-pane" style="display:none;">
-          <h4 style="margin-bottom:1rem; color:var(--text-main);">Add New Personal Project</h4>
-          <form id="admin-project-form" style="background:var(--surface-elevated); padding:1.25rem; border:1px solid var(--border-color); border-radius:12px; margin-bottom:1.5rem;">
-            <div class="form-grid-2">
-              <div class="form-group">
-                <label>Project Title</label>
-                <input type="text" id="proj-title" required placeholder="e.g. Distributed Task Scheduler">
-              </div>
-              <div class="form-group">
-                <label>Technologies</label>
-                <input type="text" id="proj-tech" required placeholder="e.g. Java, Spring Boot, Redis">
-              </div>
-              <div class="form-group">
-                <label>GitHub URL</label>
-                <input type="text" id="proj-github" placeholder="https://github.com/...">
-              </div>
-              <div class="form-group">
-                <label>Category</label>
-                <input type="text" id="proj-category" placeholder="Backend Systems">
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Description</label>
-              <input type="text" id="proj-desc" required placeholder="High-throughput distributed engine...">
-            </div>
-            <div class="form-group">
-              <label>Bullets (one per line)</label>
-              <textarea id="proj-bullets" rows="2" placeholder="Leader election via Redis&#10;Zero downtime"></textarea>
-            </div>
-            <button type="submit" class="btn-orange">+ Add Personal Project</button>
-          </form>
-          <div id="admin-projects-list" class="admin-list"></div>
-        </div>
-
-        <!-- Tab 3: Company Projects -->
-        <div id="tab-company" class="tab-pane" style="display:none;">
-          <h4 style="margin-bottom:1rem; color:var(--text-main);">Add Company Project (under MAQ Software)</h4>
-          <form id="admin-company-form" style="background:var(--surface-elevated); padding:1.25rem; border:1px solid var(--border-color); border-radius:12px; margin-bottom:1.5rem;">
-            <div class="form-grid-2">
-              <div class="form-group">
-                <label>Project Name</label>
-                <input type="text" id="comp-name" required placeholder="e.g. Real-Time Telemetry Pipeline">
-              </div>
-              <div class="form-group">
-                <label>Technologies</label>
-                <input type="text" id="comp-tech" required placeholder="e.g. Python, Azure Event Hubs, SQL">
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Impact Bullets (one per line)</label>
-              <textarea id="comp-bullets" rows="2" placeholder="Processed 5M records daily"></textarea>
-            </div>
-            <button type="submit" class="btn-orange">+ Add Company Project</button>
-          </form>
-          <div id="admin-company-list" class="admin-list"></div>
-        </div>
-
-        <!-- Tab 4: Certifications -->
-        <div id="tab-certs" class="tab-pane" style="display:none;">
-          <h4 style="margin-bottom:1rem; color:var(--text-main);">Manage Certifications</h4>
-          <form id="admin-cert-form" style="display:flex; gap:0.75rem; margin-bottom:1.5rem;">
-            <input type="text" id="cert-input" required placeholder="e.g. AWS Certified Solutions Architect" style="flex:1;">
-            <button type="submit" class="btn-orange">+ Add</button>
-          </form>
-          <div id="admin-certs-list" class="admin-list"></div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <main class="container">
 
@@ -1503,7 +1408,9 @@
       <!-- Current Company & College Badges -->
       <div class="affiliation-row">
         <div class="affiliation-badge">
-          <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+          <span class="maq-logo-badge mini">
+            <img src="./maq-logo.png" alt="MAQ Software" class="maq-company-logo mini">
+          </span>
           <span>Company: <strong class="accent-sub" id="hero-company">MAQ Software</strong> (Noida, India)</span>
         </div>
 
@@ -1551,9 +1458,14 @@
 
       <div class="card-block">
         <div class="company-header">
-          <div>
-            <div class="company-name">MAQ Software</div>
-            <div class="company-role">Associate Software Engineer · Noida, India</div>
+          <div class="company-brand-flex">
+            <div class="maq-logo-badge">
+              <img src="./maq-logo.png" alt="MAQ Software Logo" class="maq-company-logo">
+            </div>
+            <div>
+              <div class="company-name">MAQ Software</div>
+              <div class="company-role">Associate Software Engineer · Noida, India</div>
+            </div>
           </div>
           <div class="company-dates">Oct 2025 – Present</div>
         </div>
@@ -1823,7 +1735,7 @@
       const moonIcon = document.getElementById('theme-icon-moon');
 
       function getSavedTheme() {
-        return localStorage.getItem(THEME_KEY) || 'light';
+        return localStorage.getItem(THEME_KEY) || 'dark';
       }
 
       function updateTheme(theme) {
@@ -1841,7 +1753,7 @@
 
       if (themeToggleBtn) {
         themeToggleBtn.addEventListener('click', () => {
-          const current = root.getAttribute('data-theme') || 'light';
+          const current = root.getAttribute('data-theme') || 'dark';
           const next = current === 'dark' ? 'light' : 'dark';
           localStorage.setItem(THEME_KEY, next);
           updateTheme(next);
@@ -1909,7 +1821,6 @@
                 if (document.getElementById('prof-resume')) document.getElementById('prof-resume').value = d.personalInfo.resumeUrl || '';
                 if (document.getElementById('prof-summary')) document.getElementById('prof-summary').value = d.personalInfo.summary || '';
               }
-              renderAdminLists();
               if (apiStatus) apiStatus.textContent = 'REST API: /api/portfolio (Live & RBAC Active)';
               return;
             }
@@ -1921,347 +1832,6 @@
         if (apiStatus) apiStatus.textContent = 'Design: White & Orange (Ready)';
       }
 
-      function showToast(msg) {
-        const toast = document.getElementById('admin-toast-banner');
-        if (!toast) return;
-        toast.textContent = '✓ ' + msg;
-        toast.style.display = 'block';
-        setTimeout(() => { toast.style.display = 'none'; }, 2800);
-      }
-
-      // 4. Admin Authentication & CRUD Controller
-      const ADMIN_TOKEN_KEY = 'portfolio_admin_token';
-      const portalBtn = document.getElementById('admin-portal-btn');
-      const btnLabel = document.getElementById('admin-btn-label');
-      const backdrop = document.getElementById('admin-modal-backdrop');
-      const closeBtn = document.getElementById('admin-modal-close');
-      const modalTitle = document.getElementById('admin-modal-title');
-      const loginView = document.getElementById('admin-login-view');
-      const dashboardView = document.getElementById('admin-dashboard-view');
-      const loginForm = document.getElementById('admin-login-form');
-      const loginError = document.getElementById('admin-login-error');
-      const logoutBtn = document.getElementById('admin-logout-btn');
-
-      function getAdminToken() {
-        return localStorage.getItem(ADMIN_TOKEN_KEY);
-      }
-
-      function updateAdminUI() {
-        const token = getAdminToken();
-        if (token) {
-          btnLabel.textContent = 'Admin Dashboard';
-          modalTitle.textContent = 'Admin Control Dashboard';
-          loginView.style.display = 'none';
-          dashboardView.style.display = 'block';
-        } else {
-          btnLabel.textContent = 'Admin Login';
-          modalTitle.textContent = 'Administrator Authentication';
-          loginView.style.display = 'block';
-          dashboardView.style.display = 'none';
-        }
-      }
-
-      if (portalBtn) {
-        portalBtn.addEventListener('click', () => {
-          updateAdminUI();
-          backdrop.style.display = 'flex';
-        });
-      }
-
-      if (closeBtn) {
-        closeBtn.addEventListener('click', () => {
-          backdrop.style.display = 'none';
-        });
-      }
-
-      backdrop.addEventListener('click', (e) => {
-        if (e.target === backdrop) backdrop.style.display = 'none';
-      });
-
-      // Login submission
-      if (loginForm) {
-        loginForm.addEventListener('submit', async (e) => {
-          e.preventDefault();
-          loginError.style.display = 'none';
-          const username = document.getElementById('admin-input-user').value.trim();
-          const password = document.getElementById('admin-input-pass').value.trim();
-
-          try {
-            const res = await fetch('http://localhost:8081/api/auth/login', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ username, password })
-            });
-
-            const data = await res.json();
-            if (res.ok && data.success && data.data && data.data.token) {
-              localStorage.setItem(ADMIN_TOKEN_KEY, data.data.token);
-              updateAdminUI();
-              showToast('Authenticated as ' + data.data.username + ' (' + data.data.role + ')');
-              return;
-            } else {
-              loginError.textContent = data.message || 'Invalid credentials. Required: Ayush / Ayush.admin';
-              loginError.style.display = 'block';
-            }
-          } catch (err) {
-            // If offline, check exact requested credentials locally
-            if (username === 'Ayush' && password === 'Ayush.admin') {
-              localStorage.setItem(ADMIN_TOKEN_KEY, 'mock-admin-token-' + Date.now());
-              updateAdminUI();
-              showToast('Authenticated as Ayush (ROLE_ADMIN)');
-            } else {
-              loginError.textContent = 'Invalid credentials. Only user Ayush has access.';
-              loginError.style.display = 'block';
-            }
-          }
-        });
-      }
-
-      if (logoutBtn) {
-        logoutBtn.addEventListener('click', () => {
-          const token = getAdminToken();
-          if (token) {
-            fetch('http://localhost:8081/api/auth/logout', {
-              method: 'POST',
-              headers: { Authorization: 'Bearer ' + token }
-            }).catch(() => {});
-          }
-          localStorage.removeItem(ADMIN_TOKEN_KEY);
-          updateAdminUI();
-          showToast('Logged out successfully');
-        });
-      }
-
-      // Tab Switching
-      document.querySelectorAll('.tab-btn[data-tab]').forEach((btn) => {
-        btn.addEventListener('click', () => {
-          document.querySelectorAll('.tab-btn[data-tab]').forEach(b => b.classList.remove('active'));
-          document.querySelectorAll('.tab-pane').forEach(p => p.style.display = 'none');
-          btn.classList.add('active');
-          const target = document.getElementById(btn.getAttribute('data-tab'));
-          if (target) target.style.display = 'block';
-        });
-      });
-
-      // Save Profile & Contact Info (Changing num, updating resume)
-      const profileForm = document.getElementById('admin-profile-form');
-      if (profileForm) {
-        profileForm.addEventListener('submit', async (e) => {
-          e.preventDefault();
-          const token = getAdminToken();
-          const payload = {
-            fullName: document.getElementById('prof-name').value.trim(),
-            title: document.getElementById('prof-title').value.trim(),
-            currentCompany: document.getElementById('prof-company').value.trim(),
-            college: document.getElementById('prof-college').value.trim(),
-            phone: document.getElementById('prof-phone').value.trim(),
-            email: document.getElementById('prof-email').value.trim(),
-            location: document.getElementById('prof-location').value.trim(),
-            resumeUrl: document.getElementById('prof-resume').value.trim(),
-            summary: document.getElementById('prof-summary').value.trim()
-          };
-
-          try {
-            const res = await fetch('http://localhost:8081/api/admin/profile', {
-              method: 'PUT',
-              headers: {
-                'Content-Type': 'application/json',
-                Authorization: 'Bearer ' + token
-              },
-              body: JSON.stringify(payload)
-            });
-            if (res.ok) {
-              showToast('Profile & Contact details updated in database!');
-              syncPortfolioData();
-              return;
-            }
-          } catch (err) {}
-
-          // Fallback update on page
-          document.getElementById('hero-name').textContent = payload.fullName;
-          document.getElementById('hero-title').textContent = payload.title;
-          document.getElementById('hero-company').textContent = payload.currentCompany;
-          document.getElementById('hero-college').textContent = payload.college;
-          document.getElementById('hero-bio').textContent = payload.summary;
-          showToast('Profile updated locally!');
-        });
-      }
-
-      // Add Project
-      const projectForm = document.getElementById('admin-project-form');
-      if (projectForm) {
-        projectForm.addEventListener('submit', async (e) => {
-          e.preventDefault();
-          const token = getAdminToken();
-          const bullets = document.getElementById('proj-bullets').value.split('\n').map(s => s.trim()).filter(Boolean);
-          const payload = {
-            title: document.getElementById('proj-title').value.trim(),
-            technologies: document.getElementById('proj-tech').value.trim(),
-            githubUrl: document.getElementById('proj-github').value.trim(),
-            category: document.getElementById('proj-category').value.trim() || 'Backend Systems',
-            description: document.getElementById('proj-desc').value.trim(),
-            bullets: bullets
-          };
-
-          try {
-            const res = await fetch('http://localhost:8081/api/admin/projects', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-                Authorization: 'Bearer ' + token
-              },
-              body: JSON.stringify(payload)
-            });
-            if (res.ok) {
-              showToast('Project added successfully!');
-              projectForm.reset();
-              syncPortfolioData();
-            }
-          } catch (err) {}
-        });
-      }
-
-      // Add Company Project
-      const compForm = document.getElementById('admin-company-form');
-      if (compForm) {
-        compForm.addEventListener('submit', async (e) => {
-          e.preventDefault();
-          const token = getAdminToken();
-          const bullets = document.getElementById('comp-bullets').value.split('\n').map(s => s.trim()).filter(Boolean);
-          const payload = {
-            name: document.getElementById('comp-name').value.trim(),
-            technologies: document.getElementById('comp-tech').value.trim(),
-            bullets: bullets
-          };
-
-          try {
-            const res = await fetch('http://localhost:8081/api/admin/subprojects', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-                Authorization: 'Bearer ' + token
-              },
-              body: JSON.stringify(payload)
-            });
-            if (res.ok) {
-              showToast('Company project added successfully!');
-              compForm.reset();
-              syncPortfolioData();
-            }
-          } catch (err) {}
-        });
-      }
-
-      // Render Admin Lists
-      function renderAdminLists() {
-        if (!livePortfolioData) return;
-
-        // Projects
-        const pList = document.getElementById('admin-projects-list');
-        if (pList && livePortfolioData.projects) {
-          pList.innerHTML = livePortfolioData.projects.map(p => `
-            <div class="admin-list-item">
-              <div>
-                <strong>${p.title}</strong>
-                <div style="font-size:0.82rem; color:var(--text-muted);">${p.technologies}</div>
-              </div>
-              <button onclick="window.adminDeleteProject(${p.id})" class="btn-delete">🗑️ Delete</button>
-            </div>
-          `).join('');
-        }
-
-        // Company Projects
-        const cList = document.getElementById('admin-company-list');
-        if (cList && livePortfolioData.experience && livePortfolioData.experience.subProjects) {
-          cList.innerHTML = livePortfolioData.experience.subProjects.map(sp => `
-            <div class="admin-list-item">
-              <div>
-                <strong>${sp.name}</strong>
-                <div style="font-size:0.82rem; color:var(--text-muted);">${sp.technologies}</div>
-              </div>
-              ${sp.id ? `<button onclick="window.adminDeleteSubProject(${sp.id})" class="btn-delete">🗑️ Delete</button>` : ''}
-            </div>
-          `).join('');
-        }
-
-        // Certifications
-        const certList = document.getElementById('admin-certs-list');
-        if (certList && livePortfolioData.certifications) {
-          certList.innerHTML = livePortfolioData.certifications.map((c, idx) => `
-            <div class="admin-list-item">
-              <span>★ ${c}</span>
-              <button onclick="window.adminDeleteCert(${idx})" class="btn-delete">✕ Remove</button>
-            </div>
-          `).join('');
-        }
-      }
-
-      window.adminDeleteProject = async (id) => {
-        const token = getAdminToken();
-        if (!token) return;
-        if (confirm('Delete this project?')) {
-          await fetch('http://localhost:8081/api/admin/projects/' + id, {
-            method: 'DELETE',
-            headers: { Authorization: 'Bearer ' + token }
-          });
-          showToast('Project deleted');
-          syncPortfolioData();
-        }
-      };
-
-      window.adminDeleteSubProject = async (id) => {
-        const token = getAdminToken();
-        if (!token) return;
-        if (confirm('Delete this company project?')) {
-          await fetch('http://localhost:8081/api/admin/subprojects/' + id, {
-            method: 'DELETE',
-            headers: { Authorization: 'Bearer ' + token }
-          });
-          showToast('Company project deleted');
-          syncPortfolioData();
-        }
-      };
-
-      window.adminDeleteCert = async (idx) => {
-        const token = getAdminToken();
-        if (!token || !livePortfolioData || !livePortfolioData.certifications) return;
-        const updated = livePortfolioData.certifications.filter((_, i) => i !== idx);
-        await fetch('http://localhost:8081/api/admin/certifications', {
-          method: 'PUT',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: 'Bearer ' + token
-          },
-          body: JSON.stringify(updated)
-        });
-        showToast('Certification removed');
-        syncPortfolioData();
-      };
-
-      // Add Certification
-      const certForm = document.getElementById('admin-cert-form');
-      if (certForm) {
-        certForm.addEventListener('submit', async (e) => {
-          e.preventDefault();
-          const token = getAdminToken();
-          const val = document.getElementById('cert-input').value.trim();
-          if (!val) return;
-          const current = (livePortfolioData && livePortfolioData.certifications) ? [...livePortfolioData.certifications, val] : [val];
-          await fetch('http://localhost:8081/api/admin/certifications', {
-            method: 'PUT',
-            headers: {
-              'Content-Type': 'application/json',
-              Authorization: 'Bearer ' + token
-            },
-            body: JSON.stringify(current)
-          });
-          document.getElementById('cert-input').value = '';
-          showToast('Certification added');
-          syncPortfolioData();
-        });
-      }
-
-      updateAdminUI();
       syncPortfolioData();
     })();
   </script>

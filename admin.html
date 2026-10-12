@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,33 +7,7 @@
   <meta name="description" content="Administrative control center for Ayush Thakur's engineering portfolio.">
 
   <style>
-    :root {
-      --bg-base: #FFFFFF;
-      --bg-subtle: #FAF9F6;
-      --surface: #FFFFFF;
-      --surface-elevated: #FFFBF7;
-      --border-subtle: #F0EDE8;
-      --border-color: #E7E3DC;
-      --border-hover: #FDBA74;
-
-      --text-main: #1C1917;
-      --text-body: #44403C;
-      --text-muted: #78716C;
-      --text-subtle: #A8A29E;
-
-      --orange-primary: #EA580C;
-      --orange-vibrant: #F97316;
-      --orange-hover: #C2410C;
-      --orange-light: #FFF7ED;
-      --orange-border: #FFEDD5;
-
-      --card-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-      --radius-sm: 8px;
-      --radius-md: 14px;
-      --radius-lg: 18px;
-      --radius-full: 9999px;
-    }
-
+    :root,
     [data-theme="dark"] {
       --bg-base: #0C0A09;
       --bg-subtle: #141210;
@@ -54,8 +28,50 @@
       --orange-light: #2A170A;
       --orange-border: #431E09;
       --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 18px;
+      --radius-full: 9999px;
     }
 
+    [data-theme="light"] {
+      --bg-base: #FFFFFF;
+      --bg-subtle: #FAF9F6;
+      --surface: #FFFFFF;
+      --surface-elevated: #FFFBF7;
+      --border-subtle: #F0EDE8;
+      --border-color: #E7E3DC;
+      --border-hover: #FDBA74;
+
+      --text-main: #1C1917;
+      --text-body: #44403C;
+      --text-muted: #78716C;
+      --text-subtle: #A8A29E;
+
+      --orange-primary: #EA580C;
+      --orange-vibrant: #F97316;
+      --orange-hover: #C2410C;
+      --orange-light: #FFF7ED;
+      --orange-border: #FFEDD5;
+
+      --card-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    }
+
+    .maq-logo-badge {
+      display: inline-flex;
+      align-items: center;
+      background: #FFFFFF;
+      padding: 3px 8px;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+      vertical-align: middle;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+    .maq-logo-badge img {
+      height: 18px;
+      width: auto;
+      display: block;
+    }
     * {
       box-sizing: border-box;
       margin: 0;
@@ -667,7 +683,9 @@
         <!-- TAB 3: COMPANY PROJECTS -->
         <div id="tab-company" class="tab-pane" style="display:none;">
           <div class="sub-box">
-            <h3 class="sub-title">Add Company Project (under MAQ Software)</h3>
+            <h3 class="sub-title" style="display:flex;align-items:center;gap:0.6rem;flex-wrap:wrap;">
+              Add Company Project (under <span class="maq-logo-badge"><img src="maq-logo.png" alt="MAQ Software" /></span>)
+            </h3>
             <form id="company-form">
               <div class="form-grid-2">
                 <div class="form-group">
@@ -723,16 +741,16 @@
       const themeToggle = document.getElementById('theme-toggle');
       let liveData = null;
 
-      // Theme toggle
+      // Theme toggle (Default Dark Mode)
       function initTheme() {
-        const saved = localStorage.getItem('portfolio_theme_mode') || 'light';
+        const saved = localStorage.getItem('portfolio_theme_mode') || 'dark';
         root.setAttribute('data-theme', saved);
         themeToggle.textContent = saved === 'dark' ? '☀️' : '🌙';
       }
       initTheme();
 
       themeToggle.addEventListener('click', () => {
-        const current = root.getAttribute('data-theme') || 'light';
+        const current = root.getAttribute('data-theme') || 'dark';
         const next = current === 'dark' ? 'light' : 'dark';
         root.setAttribute('data-theme', next);
         localStorage.setItem('portfolio_theme_mode', next);

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +9,43 @@
 
   <style>
     /* ==========================================================================
-       WHITE & ORANGE AESTHETIC DESIGN SYSTEM (Completely Wide, Scaled & High-Signal)
+       DARK & ORANGE AESTHETIC DESIGN SYSTEM (Default Dark Mode, Completely Wide)
        ========================================================================== */
-    :root {
+    :root,
+    [data-theme="dark"] {
+      /* Dark Mode Palette Default */
+      --bg-base: #0C0A09;
+      --bg-subtle: #141210;
+      --surface: #181614;
+      --surface-elevated: #201C19;
+      --border-subtle: #292524;
+      --border-color: #38332E;
+      --border-hover: #EA580C;
+
+      --text-main: #FAFAF9;
+      --text-body: #E7E5E4;
+      --text-muted: #A8A29E;
+      --text-subtle: #78716C;
+
+      --orange-primary: #FB923C;
+      --orange-vibrant: #F97316;
+      --orange-hover: #FED7AA;
+      --orange-light: rgba(249, 115, 22, 0.14);
+      --orange-border: rgba(249, 115, 22, 0.3);
+      --orange-glow: rgba(251, 146, 60, 0.35);
+
+      --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      --card-hover-shadow: 0 20px 42px -10px rgba(234, 88, 12, 0.2), 0 6px 16px -3px rgba(0, 0, 0, 0.4);
+      --glass-nav: rgba(12, 10, 9, 0.95);
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 18px;
+      --radius-xl: 24px;
+      --radius-full: 9999px;
+    }
+
+    [data-theme="light"] {
       /* Light Mode Palette */
       --bg-base: #FFFFFF;
       --bg-subtle: #FAF9F6;
@@ -21,30 +55,66 @@
       --border-color: #E7E3DC;
       --border-hover: #FDBA74;
 
-      --text-main: #1C1917;       /* Deep Charcoal */
-      --text-body: #44403C;       /* Warm Gray Body */
-      --text-muted: #78716C;      /* Muted Subtitles */
-      --text-subtle: #A8A29E;     /* Captions & Tags */
+      --text-main: #1C1917;
+      --text-body: #44403C;
+      --text-muted: #78716C;
+      --text-subtle: #A8A29E;
 
-      --orange-primary: #EA580C;  /* Sunset Orange */
-      --orange-vibrant: #F97316;  /* Vivid Tangerine */
+      --orange-primary: #EA580C;
+      --orange-vibrant: #F97316;
       --orange-hover: #C2410C;
-      --orange-light: #FFF7ED;    /* Soft Tint Background */
-      --orange-border: #FFEDD5;   /* Soft Pill Border */
+      --orange-light: #FFF7ED;
+      --orange-border: #FFEDD5;
       --orange-glow: rgba(249, 115, 22, 0.24);
 
       --card-shadow: 0 2px 5px rgba(0, 0, 0, 0.04), 0 3px 8px -2px rgba(234, 88, 12, 0.03);
       --card-hover-shadow: 0 20px 42px -10px rgba(234, 88, 12, 0.16), 0 6px 16px -3px rgba(0, 0, 0, 0.04);
       --glass-nav: rgba(255, 255, 255, 0.95);
-
-      --radius-sm: 8px;
-      --radius-md: 14px;
-      --radius-lg: 18px;
-      --radius-xl: 24px;
-      --radius-full: 9999px;
     }
 
-    [data-theme="dark"] {
+    /* MAQ Software Logo Styles */
+    .company-brand-flex {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .maq-logo-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      padding: 0.45rem 0.95rem;
+      border-radius: var(--radius-md);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+    }
+
+    .maq-logo-badge:hover {
+      transform: scale(1.03);
+    }
+
+    .maq-logo-badge.mini {
+      padding: 0.2rem 0.5rem;
+      border-radius: var(--radius-sm);
+      margin-right: 0.45rem;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+      vertical-align: middle;
+    }
+
+    .maq-company-logo {
+      height: 28px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .maq-company-logo.mini {
+      height: 16px;
+    }
+
       /* Dark Mode Palette */
       --bg-base: #0C0A09;
       --bg-subtle: #141210;
@@ -1338,7 +1408,9 @@
       <!-- Current Company & College Badges -->
       <div class="affiliation-row">
         <div class="affiliation-badge">
-          <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+          <span class="maq-logo-badge mini">
+            <img src="./maq-logo.png" alt="MAQ Software" class="maq-company-logo mini">
+          </span>
           <span>Company: <strong class="accent-sub" id="hero-company">MAQ Software</strong> (Noida, India)</span>
         </div>
 
@@ -1386,9 +1458,14 @@
 
       <div class="card-block">
         <div class="company-header">
-          <div>
-            <div class="company-name">MAQ Software</div>
-            <div class="company-role">Associate Software Engineer · Noida, India</div>
+          <div class="company-brand-flex">
+            <div class="maq-logo-badge">
+              <img src="./maq-logo.png" alt="MAQ Software Logo" class="maq-company-logo">
+            </div>
+            <div>
+              <div class="company-name">MAQ Software</div>
+              <div class="company-role">Associate Software Engineer · Noida, India</div>
+            </div>
           </div>
           <div class="company-dates">Oct 2025 – Present</div>
         </div>
@@ -1658,7 +1735,7 @@
       const moonIcon = document.getElementById('theme-icon-moon');
 
       function getSavedTheme() {
-        return localStorage.getItem(THEME_KEY) || 'light';
+        return localStorage.getItem(THEME_KEY) || 'dark';
       }
 
       function updateTheme(theme) {
@@ -1676,7 +1753,7 @@
 
       if (themeToggleBtn) {
         themeToggleBtn.addEventListener('click', () => {
-          const current = root.getAttribute('data-theme') || 'light';
+          const current = root.getAttribute('data-theme') || 'dark';
           const next = current === 'dark' ? 'light' : 'dark';
           localStorage.setItem(THEME_KEY, next);
           updateTheme(next);
