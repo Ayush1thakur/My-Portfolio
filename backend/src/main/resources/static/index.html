@@ -72,73 +72,47 @@
       --glass-nav: rgba(255, 255, 255, 0.95);
     }
 
-    /* MAQ Software Logo Styles */
+    /* MAQ Software Logo & Badge Styles */
     .company-brand-flex {
       display: flex;
       align-items: center;
       gap: 1.25rem;
+      flex-wrap: wrap;
     }
 
     .maq-logo-badge {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      background: #ffffff;
-      padding: 0.45rem 0.95rem;
+      background: var(--surface-elevated);
+      padding: 0.5rem 1.1rem;
       border-radius: var(--radius-md);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--card-shadow);
+      color: var(--text-main);
       flex-shrink: 0;
-      transition: transform 0.2s ease;
+      transition: all 0.2s ease;
     }
 
     .maq-logo-badge:hover {
-      transform: scale(1.03);
+      border-color: #EF4444;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(220, 38, 38, 0.2);
     }
 
-    .maq-logo-badge.mini {
-      padding: 0.2rem 0.5rem;
-      border-radius: var(--radius-sm);
-      margin-right: 0.45rem;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+    .maq-emblem-badge {
+      display: inline-flex;
+      align-items: center;
       vertical-align: middle;
+      margin-right: 0.5rem;
+      flex-shrink: 0;
     }
 
     .maq-company-logo {
       height: 28px;
       width: auto;
-      object-fit: contain;
       display: block;
-    }
-
-    .maq-company-logo.mini {
-      height: 16px;
-    }
-
-      /* Dark Mode Palette */
-      --bg-base: #0C0A09;
-      --bg-subtle: #141210;
-      --surface: #181614;
-      --surface-elevated: #201C19;
-      --border-subtle: #292524;
-      --border-color: #38332E;
-      --border-hover: #EA580C;
-
-      --text-main: #FAFAF9;
-      --text-body: #E7E5E4;
-      --text-muted: #A8A29E;
-      --text-subtle: #78716C;
-
-      --orange-primary: #FB923C;
-      --orange-vibrant: #F97316;
-      --orange-hover: #FED7AA;
-      --orange-light: rgba(249, 115, 22, 0.14);
-      --orange-border: rgba(249, 115, 22, 0.3);
-      --orange-glow: rgba(251, 146, 60, 0.35);
-
-      --card-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
-      --card-hover-shadow: 0 20px 42px -8px rgba(0, 0, 0, 0.7), 0 0 18px rgba(249, 115, 22, 0.15);
-      --glass-nav: rgba(12, 10, 9, 0.95);
+      color: var(--text-main);
     }
 
     /* Reset & Base */
@@ -896,33 +870,83 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 0.75rem;
     }
 
     .cert-icon-badge {
-      width: 40px;
-      height: 40px;
+      width: 42px;
+      height: 42px;
       border-radius: var(--radius-sm);
       background: var(--orange-light);
+      border: 1px solid var(--orange-border);
       color: var(--orange-vibrant);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.3rem;
+      flex-shrink: 0;
     }
 
     .cert-tag {
-      font-size: 0.775rem;
+      font-size: 0.75rem;
       font-weight: 800;
       color: var(--orange-primary);
       font-family: ui-monospace, Menlo, Consolas, monospace;
       letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: var(--orange-light);
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--orange-border);
     }
 
     .cert-text {
-      font-size: 1.05rem;
-      font-weight: 700;
+      font-size: 1.08rem;
+      font-weight: 750;
       color: var(--text-main);
-      line-height: 1.5;
+      line-height: 1.45;
+      margin: 0.4rem 0 0.2rem 0;
+    }
+
+    .cert-issuer {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .cert-meta-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.6rem;
+      padding-top: 0.85rem;
+      border-top: 1px dashed var(--border-color);
+      flex-wrap: wrap;
+    }
+
+    .cert-license-tag {
+      font-size: 0.75rem;
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      color: var(--text-subtle);
+      background: var(--surface-elevated);
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      border: 1px solid var(--border-color);
+    }
+
+    .cert-verify-link {
+      font-size: 0.825rem;
+      font-weight: 700;
+      color: var(--orange-primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: all 0.2s ease;
+    }
+
+    .cert-verify-link:hover {
+      color: var(--orange-hover);
+      text-decoration: underline;
     }
 
     /* ==========================================================================
@@ -1365,9 +1389,8 @@
        ========================================================================== -->
   <nav class="top-bar">
     <div class="container top-bar-inner">
-      <div class="status-pill">
-        <span class="pulse-dot"></span>
-        <span id="nav-status">Open to Roles · 2026</span>
+      <div class="top-brand">
+        <a href="#home" class="nav-brand-title">Ayush Thakur</a>
       </div>
 
       <div class="top-actions">
@@ -1408,15 +1431,18 @@
       <!-- Current Company & College Badges -->
       <div class="affiliation-row">
         <div class="affiliation-badge">
-          <span class="maq-logo-badge mini">
-            <img src="./maq-logo.png" alt="MAQ Software" class="maq-company-logo mini">
+          <span class="maq-emblem-badge" aria-label="MAQ Software">
+            <svg viewBox="0 0 46 22" fill="none" style="height:19px;width:auto;display:block;">
+              <rect width="46" height="22" rx="5" fill="rgba(220, 38, 38, 0.16)" stroke="rgba(220, 38, 38, 0.35)" stroke-width="1"/>
+              <text x="23" y="15" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="900" fill="#EF4444" text-anchor="middle" letter-spacing="0.08em">MAQ</text>
+            </svg>
           </span>
-          <span>Company: <strong class="accent-sub" id="hero-company">MAQ Software</strong> (Noida, India)</span>
+          <span><strong class="accent-sub" id="hero-company">MAQ Software</strong> · Noida, India</span>
         </div>
 
         <div class="affiliation-badge">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
-          <span>College: <strong class="accent-sub" id="hero-college">Chitkara University</strong> (CGPA: 8.41)</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+          <span><strong class="accent-sub" id="hero-college">Chitkara University</strong> · CGPA: 8.41</span>
         </div>
       </div>
 
@@ -1459,11 +1485,13 @@
       <div class="card-block">
         <div class="company-header">
           <div class="company-brand-flex">
-            <div class="maq-logo-badge">
-              <img src="./maq-logo.png" alt="MAQ Software Logo" class="maq-company-logo">
+            <div class="maq-logo-badge" title="MAQ Software">
+              <svg class="maq-company-logo" viewBox="0 0 250 50" fill="none">
+                <text x="0" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="42" font-weight="900" letter-spacing="-0.02em" fill="#DC2626">MAQ</text>
+                <text x="100" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="38" font-weight="400" letter-spacing="-0.01em" fill="currentColor">Software</text>
+              </svg>
             </div>
             <div>
-              <div class="company-name">MAQ Software</div>
               <div class="company-role">Associate Software Engineer · Noida, India</div>
             </div>
           </div>
@@ -1612,31 +1640,68 @@
         </div>
       </div>
 
-      <!-- 3 Certifications Side-by-Side -->
+      <!-- Certifications with Official License & Credential Verification -->
       <div class="certs-grid-wide">
+        <!-- Microsoft Azure -->
         <div class="cert-item">
-          <div class="cert-top-icon">
-            <div class="cert-icon-badge">☁️</div>
-            <span class="cert-tag">MICROSOFT AZURE</span>
+          <div>
+            <div class="cert-top-icon">
+              <div class="cert-icon-badge">☁️</div>
+              <span class="cert-tag">Microsoft</span>
+            </div>
+            <div class="cert-text">Azure Fundamentals (AZ-900)</div>
+            <div class="cert-issuer">Microsoft Certified · Cloud Infrastructure &amp; Security</div>
           </div>
-          <div class="cert-text">Azure Fundamentals (AZ-900) &amp; Cloud Infrastructure Architecture</div>
+          <div class="cert-meta-row">
+            <span class="cert-license-tag">License: AZ-900</span>
+            <a href="https://www.linkedin.com/in/ayush-thakur1/details/certifications/" target="_blank" rel="noopener noreferrer" class="cert-verify-link">
+              Show credential ↗
+            </a>
+          </div>
         </div>
 
+        <!-- Generative AI -->
         <div class="cert-item">
-          <div class="cert-top-icon">
-            <div class="cert-icon-badge">🤖</div>
-            <span class="cert-tag">GENERATIVE AI</span>
+          <div>
+            <div class="cert-top-icon">
+              <div class="cert-icon-badge">🤖</div>
+              <span class="cert-tag">DeepLearning.AI</span>
+            </div>
+            <div class="cert-text">AI Engineering &amp; Agent Systems</div>
+            <div class="cert-issuer">LangChain, LangGraph, RAG Systems &amp; FastMCP</div>
           </div>
-          <div class="cert-text">AI Engineering: LangChain, LangGraph, RAG Systems &amp; FastMCP</div>
+          <div class="cert-meta-row">
+            <span class="cert-license-tag">Credential: AI-ENG</span>
+            <a href="https://www.linkedin.com/in/ayush-thakur1/details/certifications/" target="_blank" rel="noopener noreferrer" class="cert-verify-link">
+              Show credential ↗
+            </a>
+          </div>
         </div>
 
+        <!-- Enterprise Java Spring Boot -->
         <div class="cert-item">
-          <div class="cert-top-icon">
-            <div class="cert-icon-badge">☕</div>
-            <span class="cert-tag">BACKEND SYSTEMS</span>
+          <div>
+            <div class="cert-top-icon">
+              <div class="cert-icon-badge">☕</div>
+              <span class="cert-tag">Spring / Oracle</span>
+            </div>
+            <div class="cert-text">Enterprise Java Spring Boot &amp; Microservices</div>
+            <div class="cert-issuer">Spring Data JPA, Hibernate ORM &amp; RBAC Security</div>
           </div>
-          <div class="cert-text">Enterprise Java Spring Boot, Microservices &amp; Spring Data JPA Performance</div>
+          <div class="cert-meta-row">
+            <span class="cert-license-tag">Credential: JAVA-SB</span>
+            <a href="https://www.linkedin.com/in/ayush-thakur1/details/certifications/" target="_blank" rel="noopener noreferrer" class="cert-verify-link">
+              Show credential ↗
+            </a>
+          </div>
         </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 1.75rem;">
+        <a href="https://www.linkedin.com/in/ayush-thakur1/details/certifications/" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="font-size: 0.95rem; padding: 0.65rem 1.4rem;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="width: 17px; height: 17px;"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          <span>View All Licenses &amp; Certifications on LinkedIn ↗</span>
+        </a>
       </div>
     </section>
 
@@ -1712,10 +1777,6 @@
          ========================================================================== -->
     <footer>
       <div>&copy; <span id="year-copy">2026</span> Ayush Thakur · Associate Software Engineer</div>
-      <div class="api-pill">
-        <span class="api-dot" id="api-dot"></span>
-        <span id="api-status-text">Backend API · Connected</span>
-      </div>
     </footer>
 
   </main>
@@ -1821,15 +1882,13 @@
                 if (document.getElementById('prof-resume')) document.getElementById('prof-resume').value = d.personalInfo.resumeUrl || '';
                 if (document.getElementById('prof-summary')) document.getElementById('prof-summary').value = d.personalInfo.summary || '';
               }
-              if (apiStatus) apiStatus.textContent = 'REST API: /api/portfolio (Live & RBAC Active)';
+              if (apiStatus) apiStatus.textContent = 'REST API: Live & Connected';
               return;
             }
           }
         } catch (e) {
           // If offline or opening via file://, graceful fallback to bundled static content
         }
-
-        if (apiStatus) apiStatus.textContent = 'Design: White & Orange (Ready)';
       }
 
       syncPortfolioData();

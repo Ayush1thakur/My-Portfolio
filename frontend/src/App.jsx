@@ -787,9 +787,8 @@ export default function App() {
           {/* Public Top Bar */}
           <nav className="top-nav">
             <div className="container nav-content">
-              <div className="status-badge">
-                <span className="pulsing-dot"></span>
-                <span>Open to Roles · 2026</span>
+              <div className="top-brand">
+                <a href="#home" style={{ fontWeight: 800, fontSize: '1.1rem', textDecoration: 'none', color: 'inherit' }}>Ayush Thakur</a>
               </div>
               <div className="nav-actions">
                 <button
@@ -834,13 +833,16 @@ export default function App() {
           {/* Current Company & College Badges */}
           <div className="affiliation-group">
             <div className="affiliation-chip">
-              <span className="maq-logo-badge mini">
-                <img src="/maq-logo.png" alt="MAQ Software Logo" className="maq-company-logo mini" />
+              <span className="maq-emblem-badge" aria-label="MAQ Software">
+                <svg viewBox="0 0 46 22" fill="none" style={{ height: '18px', width: 'auto', display: 'block' }}>
+                  <rect width="46" height="22" rx="5" fill="rgba(220, 38, 38, 0.16)" stroke="rgba(220, 38, 38, 0.35)" strokeWidth="1" />
+                  <text x="23" y="15" fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fontSize="11" fontWeight="900" fill="#EF4444" textAnchor="middle" letterSpacing="0.08em">MAQ</text>
+                </svg>
               </span>
-              <span>Company: <strong>{personal.currentCompany || 'MAQ Software'}</strong> (Noida)</span>
+              <span><strong>{personal.currentCompany || 'MAQ Software'}</strong> · Noida, India</span>
             </div>
             <div className="affiliation-chip">
-              🎓 College: <strong>{personal.college || 'Chitkara University'}</strong> (CGPA: 8.41)
+              🎓 <strong>{personal.college || 'Chitkara University'}</strong> (CGPA: 8.41)
             </div>
           </div>
 
@@ -881,11 +883,13 @@ export default function App() {
           <div className="card">
             <div className="company-title-row">
               <div className="company-brand-flex">
-                <div className="maq-logo-badge">
-                  <img src="/maq-logo.png" alt="MAQ Software Logo" className="maq-company-logo" />
+                <div className="maq-logo-badge" title="MAQ Software">
+                  <svg className="maq-company-logo" viewBox="0 0 250 50" fill="none" style={{ height: '28px', width: 'auto', display: 'block' }}>
+                    <text x="0" y="38" fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fontSize="42" fontWeight="900" letterSpacing="-0.02em" fill="#DC2626">MAQ</text>
+                    <text x="100" y="38" fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fontSize="38" fontWeight="400" letterSpacing="-0.01em" fill="currentColor">Software</text>
+                  </svg>
                 </div>
                 <div>
-                  <h3 className="company-brand">MAQ Software</h3>
                   <div className="company-subtitle">Associate Software Engineer · Noida, India</div>
                 </div>
               </div>
@@ -991,11 +995,33 @@ export default function App() {
 
           <div className="cert-stack">
             {certificationsList.map((cert, idx) => (
-              <div key={idx} className="cert-tile">
-                <span className="cert-star">★</span>
-                <span>{cert}</span>
+              <div key={idx} className="cert-tile" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                  <span className="cert-star">★</span>
+                  <span>{cert}</span>
+                </div>
+                <a
+                  href="https://www.linkedin.com/in/ayush-thakur1/details/certifications/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ fontSize: '0.85rem', color: 'var(--orange-vibrant)', textDecoration: 'none', fontWeight: 700 }}
+                >
+                  Verify ↗
+                </a>
               </div>
             ))}
+          </div>
+
+          <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
+            <a
+              href="https://www.linkedin.com/in/ayush-thakur1/details/certifications/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-outline"
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.95rem' }}
+            >
+              📜 View All Licenses &amp; Certifications on LinkedIn ↗
+            </a>
           </div>
         </section>
 
